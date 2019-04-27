@@ -1,0 +1,31 @@
+<import src="./htuiji-template/htuiji-template" />
+<view class="htuiji-view" >
+<view class="all-top">
+
+  <view class="topback-view">
+    <text class="back" bindtap='backto'>返回 |</text>
+    <text class="htuiji-title"  style=" background:{{color}}">{{htuiji_title}}</text>
+  </view>
+
+  <view class="search-view"  style=" background:{{color}}" wx:if="{{topright_flag}}">
+    <icon class="search-icon" size="18" type='search'></icon>
+    <input placeholder='搜索你写过的推记标题'   bindinput="bindinputTap" class="search-text" placeholder-class='search-text-place' value='{{input_text}}'></input>
+    <image src="/images/icon/xx.png" catchtap='clean_input' wx:if="{{xxflag}}" class="clean-img"></image>
+  </view>
+</view>
+  <scroll-view tyle='height:{{scrollHeight}}' class="scroll-view" scroll-y="true"  bindscrolltolower="onScrolltolower" >
+
+<block wx:for="{{tuijiData}}" wx:for-item="data">
+<view class="single-tuiji-view">
+  <template is="single-tuiji" data="{{jid:data.jid,whosee:data.whosee,topright_flag:topright_flag,title:data.title,content:data.content,signature:data.signature,time:data.time,color:color}}" />
+</view>
+</block>
+
+
+
+  </scroll-view> 
+
+  <!-- <image class="htuijiimg" src="/images/icon/tuijibk.png" mode="scaleToFill">
+  </image> -->
+
+</view>

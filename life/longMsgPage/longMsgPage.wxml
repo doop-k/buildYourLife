@@ -1,0 +1,4 @@
+<import src="./longMsgPage-template/longMsgPage-template" />
+<view>
+<template is="longMsgPage" data="{{...tuibuData,leaveMsgData:leaveMsgData,color:color,leaveMsgValue:leaveMsgValue,scrollHeight:scrollHeight}}" />
+</view>

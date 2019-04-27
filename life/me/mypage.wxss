@@ -1,0 +1,162 @@
+@import "./htuibu-template/htuibu-template" ;
+page {
+}
+.btn-view{
+  margin-top:80rpx;
+  width: 100%;
+  text-align: center;
+}
+.inputText {
+  margin-top:10rpx;
+  width: 600rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  letter-spacing: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 5rpx;
+
+  /* background-color:#4ca8f2; */
+ 
+}
+button::after{
+  border:none;
+}
+
+.loginPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-top: 200rpx;
+  width: 100%;
+  letter-spacing: 30rpx;
+  height: auto;
+  font-size: 60rpx;
+  color: white;
+  text-align: center;
+}
+
+.hello {
+  margin-top: 200rpx;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  letter-spacing: 15rpx;
+  color: white;
+  font-size: 40rpx;
+}
+.mycolled{
+  width:100rpx;
+  height:100rpx;
+  position: fixed;
+  top:0rpx;
+  right:20rpx;
+}
+.cutLine {
+  width: 100%;
+  height: 40rpx;
+  background-color: white;
+  margin-top: 200rpx;
+}
+
+.login {
+  margin-top: 5rpx;
+  margin-right: 100rpx;
+  width: 100%;
+  height: auto;
+  text-align: right;
+  font-size: 50rpx;
+  letter-spacing: 30rpx;
+  color: white;
+}
+
+.btnLogin {
+  width: 100%;
+  height: 100%;
+  letter-spacing: 20rpx;
+  text-align: right;
+  padding-right: 40rpx;
+  padding-top: 100%;
+background: white;
+  font-size: 70rpx;
+  color: black;
+}
+
+.ageSetting {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bornDatetext {
+  font-size: 70rpx;
+  letter-spacing: 20rpx;
+  width: auto;
+  text-align: center;
+  height: auto;
+  color: black;
+}
+
+.bornDate {
+  width: 100%;
+  height: 100rpx;
+  margin-top: 450rpx;
+  font-size: 60rpx;
+  color: black;
+  line-height: 100rpx;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.dateTips {
+  margin: 50rpx 30rpx 0rpx 30rpx;
+}
+
+.tiptext {
+  color: black;
+  font-size: 40rpx;
+  letter-spacing: 10rpx;
+}
+
+.btnAC {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100rpx;
+  margin-top: 50rpx;
+  border: 1px solid black;
+}
+
+.accept {
+  color: black;
+  width: 50%;
+  height: 100rpx;
+  font-size: 40rpx;
+  border-left: 1px solid black;
+  text-align: center;
+  line-height: 100rpx;
+  letter-spacing: 10rpx;
+}
+
+.cannel {
+  width: 50%;
+  height: 100rpx;
+  font-size: 40rpx;
+  color: rgb(163, 159, 159);
+  text-align: center;
+  line-height: 100rpx;
+  letter-spacing: 10rpx;
+}
+.mypage-view{
+  
+}

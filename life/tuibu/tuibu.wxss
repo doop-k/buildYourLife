@@ -1,0 +1,50 @@
+@import "./tuibu-single-template/tuibu-single-template" ;
+
+.tuibu-view{
+
+
+}
+.tuibu-template-view{
+ 
+
+  margin-top:150rpx;
+ 
+}
+.single-tubu{
+  margin-bottom: 100rpx;
+  background-color: white;
+}
+.whotuibu-view{
+  position: fixed;
+  top:0rpx;
+  left:0rpx;
+  height:100rpx;
+  width:100%;
+  background-color:  #4ca8f2 ;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+.avatar-img{
+  margin-left:100rpx;
+  width:80rpx;
+  height:80rpx;
+  border:1px solid white;
+  border-radius: 80rpx;
+}
+.nickname-text{
+  margin-left:40rpx;
+  color:white;
+  font-size: 40rpx;
+}
+.notuibu{
+  position: absolute;
+  top:250rpx;
+  font-size: 60rpx;
+  width: 100%;
+  height:100rpx;
+  margin-top:300rpx;
+  text-align: center;
+  letter-spacing: 10rpx;
+}

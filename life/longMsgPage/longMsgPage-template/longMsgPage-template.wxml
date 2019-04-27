@@ -1,0 +1,46 @@
+<import src="../leaveMsg-template/leaveMsg-template" />
+<template name="longMsgPage">
+  <view class="MsgPageView">
+    <view catchtap='showUserPage' class="userImgNice">
+      <image src='{{avatarUrl}}'  class="userImg"></image>
+      <text class="userNice">{{nickName}}</text>
+    </view>
+    <image catchtap='collectedTuibu' src="{{isCollected?'/images/icon/colled.png':'/images/icon/coll.png'}}" class="collected"></image>
+    <scroll-view scroll-y  bindscrolltolower="updateLeaveMsg"  style="height:{{scrollHeight}}" class="scroll-view">
+      <text class="userMessage">{{tuibuMsg}}</text>
+      <view class="bottomTools">
+        <view class="msgLevel">
+          <view class="recText">
+            <text class="recData">{{tuibuLike}} 人赞</text>
+            <text class="time">{{time}}</text>
+            <text class="delTuibu" data-bid="{{bid}}" wx:if="{{isSelf}}" catchtap='delTuibu'>扔掉</text>
+          </view>
+        </view>
+        <image class="likeImg" catchtap='liketuibuTap' src="{{isLike?'/images/icon/liked.png':'/images/icon/like.png'}}"></image>
+      </view>
+      <view class="leaveMsg">
+        <view class="leaveMsg-top">
+          <text class="line" style="border-top:1rpx solid {{color}}"></text>
+          <text class="leaveMsg-font">{{leaveMsg}}条评论</text>
+          <text class="line" style="border-top:1rpx solid {{color}}"></text>
+        </view>
+        <view class="leaveMessage-view">
+        <block wx:for="{{leaveMsgData}}" wx:for-item="data">
+          <view class="sigle_leaveMsg">
+            <template is="t_leaveMsg" data="{{avatarUrl:data.avatarUrl,leaveMsg:data.leaveMsg,time:data.time,color:color,canDel:data.canDel,leaveId:data.leaveId,lifeID:data.lifeID}}" />
+          </view>
+          </block>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="leaveMsg-input-view" style="border-top:1rpx solid {{color}}">
+      <textarea class='leaveMsg-input' bindinput='leaveMsginput' value="{{leaveMsgValue}}"
+      maxlength='0' placeholder='写评论'>
+      </textarea>
+      <image class="submit-img" catchtap='leaveMsgTap'
+      src='/images/icon/home-selected.png'></image>
+
+
+    </view>
+  </view>
+</template>

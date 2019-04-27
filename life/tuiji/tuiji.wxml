@@ -1,0 +1,26 @@
+<view class="all-view" style="background:{{color}}">
+
+
+  <view class="tuiji-view" >
+
+
+<form bindsubmit="tuijiSubmit" bindtap='showtime'>
+<input name="tuiji_title" value="{{title_value}}" style="  border-bottom: 1px solid {{color}};" class="tuiji_title" placeholder='{{tuiji_title}}'></input>
+<label class="switch">{{switch_pre}}</label><switch class='switch-style' bindchange='switch_pre' color='#4ca8f2' checked="{{switch_checked}}" ></switch>
+<textarea name="tuiji_content" value="{{content_value}}"  maxlength='-1' class="tuiji_content" placeholder='{{tuiji_content}}' placeholder-class='tuiji_content_place'></textarea>
+<view class="bottom">
+<input maxlength='20' value="{{signature_value}}" name="tuiji_signature" class="tuiji_signature" placeholder='{{tuiji_signature}}'></input>
+<text class="time" >{{time}}</text>
+
+<picker class="tuiji_past_due" style="  border-top: 1rpx solid {{color}};" mode="date" value="" start="{{starTime}}" bindtap='dateTap'  end="{{endTime}}" bindchange='dateChange' >
+{{tuiji_past_due}}
+</picker>
+</view>
+
+
+<button style="color:{{color}};border:1rpx solid {{color}}"   form-type='submit' >记下</button>
+</form>
+<!-- <image src="/images/icon/brown.png" class="img"  mode='scaleToFill'></image> -->
+</view>
+</view>
+

@@ -1,0 +1,12 @@
+@import "./single-lifeMsg-template/single-lifeMsg-template";
+.more-lifeMsg-view{
+  display: flex;
+  flex-direction: column;
+  padding-top:50rpx;
+  
+
+}
+.single-lifeMsg-view{
+
+ margin-bottom: 50rpx;
+}

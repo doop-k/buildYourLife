@@ -1,0 +1,15 @@
+@import "../template/moreLifeMsg-template/single-lifeMsg-template/single-lifeMsg-template";
+@import "../template/search-template/search-template";
+.more-lifeMsg-view{
+  padding-top:20rpx;
+  width:880rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.single-lifeMsg-view{
+  float:left;
+  margin-left:10rpx;
+ margin-bottom: 10rpx;
+}

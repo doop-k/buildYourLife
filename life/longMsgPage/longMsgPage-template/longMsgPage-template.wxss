@@ -1,0 +1,155 @@
+@import "../leaveMsg-template/leaveMsg-template";
+
+.MsgPageView {
+  background: linear-gradient(rgb(188, 220, 231), rgb(255, 255, 255));
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.collected{
+position: fixed;
+top: 0rpx;
+right: 60rpx;
+width: 80rpx;
+height: 80rpx;
+}
+
+.userImgNice {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.userImg {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 50rpx;
+  border-radius: 100rpx;
+}
+
+.userNice {
+  font-size: 60rpx;
+  letter-spacing: 10rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  color: black;
+}
+
+.userMessage {
+  margin: 20rpx 10rpx 20rpx 10rpx;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
+  padding: 20rpx;
+}
+
+.bottomTools {
+  margin: 10rpx 20rpx 20rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.msgLevel {
+  width: 100%;
+  height: 200rpx;
+}
+
+.recText {
+  font-size: 30rpx;
+  margin-top: -5rpx;
+}
+
+.recData {
+  font-size: 40rpx;
+  margin-left: 30rpx;
+}
+
+.likeImg {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
+}
+
+.time {
+  margin-left: 40rpx;
+}
+.delTuibu{
+    margin-left: 20rpx;
+    color:rgb(248, 59, 59);
+}
+.leaveMsg {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100rpx;
+  width: 700rpx;
+  margin-left: 0rpx;
+}
+
+.leaveMsg-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.line {
+  width: 260rpx;
+  margin-top: 14rpx;
+}
+
+.leaveMsg-font {
+  font-size: 25rpx;
+  letter-spacing: 5rpx;
+}
+
+.leaveMsg-input-view {
+  position: absolute;
+  bottom: 10rpx;
+  width: 700rpx;
+  height: auto;
+  margin-left: 23rpx;
+  display: flex;
+  flex-direction: row;
+  letter-spacing: 5rpx;
+  z-index: 99;
+  background: white;
+}
+
+.leaveMsg-input {
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  overflow: hidden;
+  width: 300px;
+  height: 40px;
+}
+
+.submit-img {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+}
+
+.leaveMessage-view {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50rpx;
+  margin-left: 22rpx;
+  width: 600rpx;
+  height: auto;
+}
+
+.sigle_leaveMsg {
+  margin-bottom: 40rpx;
+}
+
+scroll-view {
+  overflow: hidden;
+  width: 700rpx;
+  margin-left: 25rpx;
+}

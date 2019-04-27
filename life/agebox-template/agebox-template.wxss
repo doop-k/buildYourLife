@@ -1,0 +1,67 @@
+/* life/agebox-template/agebox-templata.wxss */
+@import "../ageMessageBox-template/ageMessageBox-template";
+
+.age_box-view {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-bottom: 100rpx;
+  transition: 1s;
+}
+
+.age_box {
+  /* background: linear-gradient(to right,#31d1f9,#ff675b);*/
+}
+
+.headView {
+  width: 700rpx;
+  margin-left:25rpx;
+  display: flex;
+  flex-direction: raw;
+  height:80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}
+
+.bodyView {
+  margin-left: 50rpx;
+  text-align: center;
+  line-height: 100rpx;
+  transition: 1s;
+  overflow: hidden;
+  width:650rpx;
+}
+
+.age_number {
+  margin-left: 40%;
+  font-size: 35rpx;
+}
+
+.age_text {
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+  font-size: 25rpx;
+  letter-spacing: 2rpx;
+}
+
+.showMoreText {
+  width: 100%;
+  position: relative;
+  bottom: 23rpx;
+  font-size: 30rpx;
+  letter-spacing: 10rpx;
+}
+
+.msgitembox {
+  margin-bottom: 30rpx;
+}
+
+.age_box_bottom {
+  position: relative;
+  width: 700rpx;
+  margin-left:25rpx;
+  border-top:1rpx solid white;
+  height: 40rpx;
+  border-radius: 10rpx;
+
+}

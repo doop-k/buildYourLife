@@ -1,0 +1,24 @@
+<import src="../ageMessageBox-template/ageMessageBox-template" /> 
+<template name="age_box_template">
+<view class="age_box-view" data-age="{{age}}"  catchtap='boxFristTap'>
+<view  class="age_box"   >
+<view class="headView" style="background:{{color}}"     >
+<text class="age_number">{{age}}</text>
+<text class="age_text">岁的大家</text>
+</view>
+<view class="bodyView" style="height:{{boxHeight}};background:{{color}}" >
+<block wx:for="{{tuibuMsg}}" wx:for-item="data">
+<view class="msgitembox"  >
+<template is="messageBox" data="{{tuibuMsg:data.text,avatarUrl:data.avatarUrl,lifeID:data.lifeID,age:age,bid:data.bid}}" />
+</view>
+
+</block>
+
+<text wx:if="{{tuibuMsg.length>1}}" class="showMoreText" data-age="{{age}}" catchtap='showMoreMsg' >查看更多</text>
+</view>
+
+
+</view>
+<view  class="age_box_bottom" style="background:{{color}}"></view>
+</view>
+</template>

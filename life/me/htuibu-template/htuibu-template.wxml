@@ -1,0 +1,20 @@
+<template name="htuibu">
+
+    <view class="userPageView">
+
+      <view class="userHeadView" style="  border-bottom: 1px solid {{color}};">
+        <image class="fadeImg" src='{{userImage}}' mode="aspectFill"></image>
+        <image class="userImg" style="  border: 1px solid {{color}};" mode="aspectFit" src='{{userImage}}' data-img="{{userImage}}"  catchtap='previewImage'></image>
+        <text class="d_userNickname" >{{userNickName}}</text>
+      </view>
+      <!-- <image class="default_img" src="/images/icon/myPage.png"></image> -->
+      
+    <view class="whotuibu-view" style="border-left: 2px solid {{color}}; border-right: 2px solid {{color}};"  >
+      <text class="who-text"  style="  background: {{color}};"catchtap='opentuibu' data-lifeiD="{{lifeID}}"  >{{who}}的推布</text>
+      <text class="who-text"  style=" border-top:1px solid white;background: {{color}};"  data-lifeiD="{{lifeID}}" catchtap='openjibu' >{{who}}的推记</text>
+    </view>
+
+   
+    </view>
+
+</template>

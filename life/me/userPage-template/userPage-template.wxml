@@ -1,0 +1,26 @@
+<template name="userPageTemplate">
+  <scroll-view>
+    <view class="userPageView">
+
+      <view class="userHeadView" >
+        <image class="fadeImg" src='{{userImage}}' mode="aspectFill"></image>
+        <image class="userImg" mode="aspectFit" src='{{userImage}}'  ></image>
+        <text class="d_userNickname">{{userNickName}}</text>
+      </view>
+      <image class="default_img" src="/images/icon/myPage.png"></image>
+      <text class="default_textAge">推 布：</text>
+      <view class="bodyAgeView">
+        <view wx:if="{{cloth}}">
+          <block wx:for="{{cloth}}" wx:for-item="age">
+            <view catchtap='clothAgeTap' data-age="{{age}}" class="ageView">{{age}}
+              <text style='font-size:30rpx'>岁的时候……</text>
+            </view>
+          </block>
+        </view>
+        <view wx:else>
+          <view>推布暂无内容</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</template>

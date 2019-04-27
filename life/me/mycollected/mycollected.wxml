@@ -1,0 +1,18 @@
+<import src="../../template/moreLifeMsg-template/single-lifeMsg-template/single-lifeMsg-template" />
+<import src="../../template/search-template/search-template" />
+<view>
+<template is="search" wx:if="{{tuibuMsg[0]}}"    data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,color:color,placeholder:placeholder,input_type:input_type}}" />
+
+<scroll-view scroll-y wx:if="{{tuibuMsg[0]}}" bindscrolltolower="updateData" class="more-lifeMsg-view" style="height:{{scrollHeight}}">
+  <block wx:for="{{tuibuMsg}}" wx:for-item="data">
+    <view class="single-lifeMsg-view"  >
+      <template is="single-lifeMsg-template" data="{{avatarUrl:data.avatarUrl,tuibuMsg:data.tuibuMsg,lifeID:data.lifeID,bid:data.bid,color:color}}" />
+
+    </view>
+  </block>
+</scroll-view>
+
+<view class="noColled" style="background:{{color}}" wx:else>
+<text>这里很冷清···</text>
+</view>
+</view>

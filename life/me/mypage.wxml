@@ -1,0 +1,37 @@
+<import src="./htuibu-template/htuibu-template" />
+<view wx:if="{{ageSetting}}" class="ageSetting">
+  <text class="bornDatetext">出生日期</text>
+  <picker class="bornDate" mode="date" value="{{userDate}}" start="1900-09-01" end="2018-09-01" bindchange="bindDateChange">{{userDate}}</picker>
+  <view class="dateTips">
+    <text class="tiptext" style="color:red;font-size:50rpx">注:</text>
+    <text class="tiptext">出生日期一但设定以后将不能对其进行更改，确保输入正确的出生日期。</text>
+  </view>
+  <view class="btnAC">
+    <text class="cannel" bindtap='cannelAgeTap'>暂不设置</text>
+    <text class="accept" bindtap='acceptAgeTap'>确认</text>
+  </view>
+</view>
+
+<view wx:if="{{loginSuccess}}"  class="mypage-view" >
+<image src="/images/icon/mycolled.png" data-lifeid="{{lifeID}}" bindtap='opencolled' class="mycolled"></image>
+  <template is="htuibu" data="{{userImage:avatarUrl,userNickName:nickName,who:'我',lifeID:lifeID,color:color}}" />
+  <view class="btn-view">
+ 
+    <button style="color:{{color}};border:1px solid {{color}};"  class="inputText" bindtap='sayMsgTap'> 写一条 推布</button>
+        <button style="color:{{color}};border:1px solid {{color}};" class="inputText" bindtap='saytuiji'> 写一条 推记</button>
+         </view>
+</view>
+<view wx:else >
+  <button class="btnLogin" bindgetuserinfo="getUserInfoTap" open-type="getUserInfo" bindtap='loginLife' >
+    登陆
+  </button>
+  <!-- <view class="loginPage">
+  <text class="title">一生的建议</text>
+  <text class="hello">Hello</text>
+  <text class="cutLine"></text>
+<text class="login" open-type="getUserInfo"  bindtap='loginLife'>登陆</text> 
+
+
+  </view>-->
+
+</view>

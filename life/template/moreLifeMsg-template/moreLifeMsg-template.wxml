@@ -1,0 +1,18 @@
+<import src="./single-lifeMsg-template/single-lifeMsg-template" />
+  <template name="moreLifeMsg-template">
+    <view class="more-lifeMsg-view">
+      <view class="single-lifeMsg-view">
+        <template is="single-lifeMsg-template" data="{{avatarUrl:'/images/avatar/1.png',lifeMsg:'这是一个测试语句',lifeMsgDate:'2019-4-18 13:40'}}"   />
+
+      </view>
+
+<view class="single-lifeMsg-view">
+        <template is="single-lifeMsg-template" data="{{avatarUrl:'/images/avatar/1.png',lifeMsg:'这是一个测试语句',lifeMsgDate:'2019-4-18 13:40'}}"   />
+
+      </view>
+
+
+    </view>
+
+
+    </template>

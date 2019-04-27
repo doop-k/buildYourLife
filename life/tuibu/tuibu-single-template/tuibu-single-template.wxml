@@ -1,0 +1,33 @@
+<template name="tuibu">
+<view>
+  <view class="single-tuibu-view" bindtap='tuibuDetail' data-bid="{{bid}}">
+
+    <text class="lifeMsg-text" bindtap='showLongMsg' data-bid="{{bid}}" data-lifeid="{{lifeID}}">{{tuibuMsg}}</text>
+    <!--填充的文字-->
+
+    <text class="time-text">{{time}}</text>
+    <view class="lifeMsgAge-view" style='background:{{color}}'>
+
+      <view class="data-view">
+        <!--对应的年龄-->
+        <text class="dynamic-text">{{age}}</text>
+        <text class="default-text">{{agefont}}</text>
+      </view>
+
+      <view class="data-view">
+        <!--赞数-->
+        <text class="dynamic-text">{{tuibuLike}}</text>
+        <text class="default-text">{{likefont}}</text>
+      </view>
+      <view class="data-view">
+        <!--赞数-->
+        <text class="dynamic-text">{{leaveMsg}}</text>
+        <text class="default-text">次评论</text>
+      </view>
+
+
+    </view>
+  </view>
+  <button  wx:if="{{isSelf}}" data-bid="{{bid}}"  bindtap='delbtnTap' class="delbtn">扔掉此推布</button>
+  </view>
+</template>

@@ -1,0 +1,14 @@
+<template name='single-lifeMsg-template'>
+ <view class="single-contain" data-lifeid="{{lifeID}}"  data-bid="{{bid}}"  bindtap='showLongLifeMsg'  style=" border: 1px solid {{color}};" >
+  <image src="{{avatarUrl}}" style=" border: 1px solid {{color}};" catchtap='toUserPageTap' data-lifeid='{{lifeID}}'  class="avatarUrl"></image>
+  <image src="{{avatarUrl}}" mode="scaleToFill" class="avatarUrlFaded"></image>
+
+    <text class="tuibuMsg"     >{{tuibuMsg}}</text>
+    <!--  <view class="tooltext"> <view class="timetool">
+        <text class="tptext">推布时间:</text>
+        <text class="time">{{lifeMsgDate}}</text>
+        <image class="like" src="/images/icon/like.png" ></image>
+    </view>   </view>-->
+
+</view>
+</template>

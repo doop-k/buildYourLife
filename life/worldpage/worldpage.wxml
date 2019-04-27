@@ -1,0 +1,14 @@
+<import src="../agebox-template/agebox-template" />
+<import src="../template/search-template/search-template" />
+<view class="contains">
+<text class="title" style="background:{{color}};">推布圈</text>
+<template is="search"   data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,color:color,placeholder:placeholder,input_type:input_type}}" />
+
+<scroll-view scroll-y bindscrolltolower="updateTabdata"  class="age_contains" style="height:{{scrollHeight}}">
+<block wx:for="{{tuibuData}}" wx:for-item="data" >
+<template is="age_box_template"  data="{{age:data.age,tuibuMsg:data.tuibuMsg,boxHeight:data.boxHeight,color:color}}"/>
+</block>
+
+</scroll-view> 
+
+</view>

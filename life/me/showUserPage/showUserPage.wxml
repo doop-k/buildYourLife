@@ -1,0 +1,6 @@
+<import src="../htuibu-template/htuibu-template"  />
+
+<template is="htuibu" data="{{userImage:avatarUrl,userNickName:nickName,who:who,lifeID:lifeID,color:color}}" >
+
+</template>
+

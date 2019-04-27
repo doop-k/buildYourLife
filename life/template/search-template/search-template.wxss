@@ -1,0 +1,36 @@
+.search-view{
+  display: flex;
+  flex-direction: row;
+  width:700rpx;
+  margin-left:25rpx;
+  height:60rpx;
+   line-height: 60rpx;
+  border-radius:60rpx;
+  border:1rpx solid white;
+
+}
+.search-icon{
+
+  margin-top:10rpx;
+  margin-left:50rpx;
+  color:white;
+}
+
+.search-text{
+margin-top:3rpx;
+margin-left:20rpx;
+font-size: 26rpx;
+width:500rpx;
+color:white;
+
+}
+.search-text-place{
+  color:rgb(196, 189, 189);
+}
+.clean-img{
+  width:25rpx;
+  height:25rpx;
+  position: absolute;
+  right:40rpx;
+  margin-top:20rpx;
+}

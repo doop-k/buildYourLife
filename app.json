@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "life/worldpage/worldpage",
+    "life/me/mypage",
+    "life/me/mycollected/mycollected",
+    "life/tuiji/tuiji",
+    "life/me/showUserPage/showUserPage",
+    "life/longMsgPage/longMsgPage",
+    "life/me/published/published",
+    "life/tuibu/tuibu",
+    "life/htuiji/htuiji",
+    "life/moreLifeMsg/moreLifeMsg",
+    "life/prompt/prompt"
+  ],
+  "tabBar": {
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "life/worldpage/worldpage",
+        "text": "推布圈",
+        "iconPath": "/images/icon/lifeMsg.png",
+        "selectedIconPath": "/images/icon/lifeMsg-selected.png"
+      },
+      {
+        "pagePath": "life/prompt/prompt",
+        "text": "消息",
+        "iconPath": "/images/icon/msgbox.png",
+        "selectedIconPath": "/images/icon/msgbox-selected.png"
+      },
+      {
+        "pagePath": "life/me/mypage",
+        "text": "我",
+        "iconPath": "/images/icon/home.png",
+        "selectedIconPath": "/images/icon/home-selected.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#4ca8f2",
+    "navigationBarTitleText": "一生"
+  },
+  "sitemapLocation": "sitemap.json"
+}

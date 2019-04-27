@@ -1,0 +1,21 @@
+<template name="single-tuiji">
+
+  <view class="tuiji-view" style=" background:{{color}}">
+    <view class="top-view">
+      <text class="visible" wx:if="{{topright_flag}}" >{{'公开'}}</text>
+      <switch wx:if="{{topright_flag}}" color='{{color}}' data-jid="{{jid}}" bindchange='changeVisible' class="changeVisible" checked='{{whosee== 1 ?true:false}}' ></switch>
+      <!-- <picker bindchange="bindPickerChange" value="{{pri==1?'仅自己可见':'所有人可见'}}" range="{{pri_arr==1?:'仅自己可见'}}">
+        <text wx:if="{{topright_flag}}"  >--</text>
+      </picker> -->
+    </view>
+    <view class="middle-view">
+    <text class="title">{{title}}</text>
+    <text class="content">{{content}}</text>
+    </view>
+    <view class="bottom-view">
+    <text class="signature">{{signature}}</text>
+    <text class="time">{{time}}</text>
+    </view>
+  </view>
+
+</template>

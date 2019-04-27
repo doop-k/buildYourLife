@@ -1,0 +1,30 @@
+@import     "../../template/moreLifeMsg-template/single-lifeMsg-template/single-lifeMsg-template";
+@import "../../template/search-template/search-template";
+.noColled{
+  position: fixed;
+  top:30%;
+  left:75rpx;
+  width:600rpx;
+  height:200rpx;
+  text-align: center;
+  line-height: 200rpx;
+  border-radius: 20rpx;
+}
+.noColled text{
+  font-size: 28rpx;
+  letter-spacing: 10rpx;
+  color:white;
+}
+.more-lifeMsg-view{
+  padding-top:20rpx;
+  width:880rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.single-lifeMsg-view{
+  float:left;
+  margin-left:10rpx;
+ margin-bottom: 10rpx;
+}

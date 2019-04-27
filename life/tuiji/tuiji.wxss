@@ -1,0 +1,158 @@
+/* life/tuiji/tuiji.wxss */
+
+page {
+  padding: 0rpx;
+  margin: 0rpx;
+  padding-top:100rpx;
+}
+.all-view{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0rpx;
+  left:0rpx;
+}
+.tuiji-view {
+    background: white;
+    width: 700rpx;
+    margin-left:25rpx;
+    border-radius: 13rpx;
+}
+
+form {
+}
+
+.tuiji-default-text {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 70rpx;
+  background: #4ca8f2;
+  color:white;
+  font-size: 35rpx;
+  letter-spacing: 3rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+.tuiji_title {
+  margin-top: 125rpx;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  letter-spacing: 5rpx;
+
+
+}
+
+.switch {
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  margin-right: 5rpx;
+}
+
+.wx-switch-input {
+  margin-top: 5rpx;
+  width: 82rpx !important;
+  height: 40rpx !important;
+  border:1rpx solid white;
+}
+
+/*白色样式（false的样式）*/
+
+.wx-switch-input::before {
+  width: 80rpx !important;
+  height: 36rpx !important;
+    border:1rpx solid white;
+}
+
+/*绿色样式（true的样式）*/
+
+.wx-switch-input::after {
+  width: 40rpx !important;
+  height: 36rpx !important;
+    border:1rpx solid white;
+}
+
+.tuiji_content {
+  width: 90%;
+  margin-left:5%;
+  height: 400rpx;
+  text-align: center;
+  vertical-align: center;
+  font-size: 30rpx;
+  letter-spacing: 10rpx;
+  padding-left:20rpx;
+  padding-right: 20rpx;
+}
+
+.tuiji_content_place {
+  margin-top: 400rpx;
+}
+
+.tuiji_signature {
+  width: 90%;
+  margin-left:5%;
+  text-align: right;
+  height: 80rpx;
+  letter-spacing: 5rpx;
+  font-size: 25rpx;
+  padding-right: 30rpx;
+}
+
+.time {
+  width: 90%;
+  margin-left:5%;
+  text-align: right;
+  margin-top: 10rpx;
+  font-size: 27rpx;
+  height: 60rpx;
+  color: black;
+  margin-right: 10rpx;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.tuiji_past_due {
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+
+
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  position: fixed;
+  bottom: 80rpx;
+  width: 660rpx;
+  line-height: 100rpx;
+  margin-left:21rpx;
+  height: 100rpx;
+  color:white;
+  font-size: 24rpx;
+  letter-spacing: 10rpx;
+  background: white;
+  border-radius: 5rpx;
+}
+.img{
+  position: absolute;
+  top:0rpx;
+  left:0rpx;
+  z-index: -99;
+  width: 100%;
+  height:100%;
+  -webkit-filter: blur(5rpx);
+}

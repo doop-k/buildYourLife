@@ -1,0 +1,3 @@
+<import src="../published-template/published-template" />
+
+<template is="published-template" data="{{availableAge:availableAge,nickName:nickName,avatarUrl:avatarUrl,value:value,selected:selected,color:color,isCanwrite:isCanwrite}}"   />

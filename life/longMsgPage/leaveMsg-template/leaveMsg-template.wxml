@@ -1,0 +1,29 @@
+<!-- 
+<view wx:if="{{canDel}}" class="del-view-father">
+<view class="t-leaveMsg"   bindtap='rightdel'  style='background:{{color}};margin-left:{{boxleft}}'>
+<image class="t-avatarimg" src='{{avatarUrl}}'></image>
+
+<view class="t-msgtime"   >
+<text class="t-text">{{leaveMsg}}</text>
+<text class="t-time">{{time}}</text>
+</view>
+<button  catchtap='delleavemsg' class="btndellea">删除</button>
+
+</view> 
+ <view class="delbtn-view"></view> -->
+<template name='t_leaveMsg'>
+
+<view class="t-leaveMsg"  style='background:{{color}};'>
+<image class="t-avatarimg" bindtap='openleaveuser'  data-lifeid="{{lifeID}}" src='{{avatarUrl}}'></image>
+
+<view class="t-msgtime"    >
+<text class="t-text">{{leaveMsg}}</text>
+<view class="t-del">
+<text class="t-time">{{time}}</text>
+<text wx:if="{{canDel}}" data-leaveid="{{leaveId}}" catchtap='rightdel' class="del-text">删除</text>
+</view>
+
+</view>
+</view>
+
+</template>

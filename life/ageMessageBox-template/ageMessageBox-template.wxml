@@ -1,0 +1,7 @@
+<template name="messageBox">
+ <view class="messageView" >
+
+  <text catchtap='showLongMsg'  data-bid="{{bid}}" data-lifeiD="{{lifeID}}"  class="userMes">{{tuibuMsg}}</text>
+    <image catchtap='showUserPage' data-lifeid="{{lifeID}}"  src="{{avatarUrl}}" class="userimg"></image>
+ </view> 
+</template>

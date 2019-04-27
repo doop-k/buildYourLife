@@ -1,0 +1,96 @@
+.tuiji-view {
+  width: 700rpx;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5rpx;
+}
+
+.top-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.visible {
+  color: white;
+  margin-top: 10rpx;
+  margin-left: -10rpx;
+  font-size: 30rpx;
+}
+
+.changeVisible {
+  color: black;
+}
+
+.middle-view {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50rpx;
+}
+
+.title {
+  position: static;
+  width: 100%;
+  text-align: center;
+  color: rgb(17, 12, 12);
+  margin-bottom: 100rpx;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid white;
+}
+
+.content {
+  position: static;
+  width: 90%;
+  margin-left: 5%;
+  text-align: center;
+  color: black;
+  font-size: 25rpx;
+}
+
+.bottom-view {
+  position: static;
+  margin-top: 100rpx;
+  width: 90%;
+  text-align: right;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+ 
+  padding-bottom: 10rpx;
+}
+
+.signature {
+  color: black;
+  font-size: 30rpx;
+}
+
+.time {
+  color: black;
+  font-size: 30rpx;
+}
+
+.wx-switch-input {
+  margin-top: 5rpx;
+  width: 82rpx !important;
+  height: 40rpx !important;
+  border: 1rpx solid white;
+}
+
+/*白色样式（false的样式）*/
+
+.wx-switch-input::before {
+  width: 80rpx !important;
+  height: 36rpx !important;
+  border: 1rpx solid white;
+}
+
+/*绿色样式（true的样式）*/
+
+.wx-switch-input::after {
+  width: 40rpx !important;
+  height: 36rpx !important;
+  border: 1rpx solid white;
+}

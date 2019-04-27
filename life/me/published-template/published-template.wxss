@@ -1,0 +1,108 @@
+.publishedView{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width:100%;
+  height:100%;
+  position:absolute;
+
+}
+.note{
+  width: 600rpx;
+  height:300rpx;
+  padding-top:70rpx;
+  text-align: center;
+  margin-top:300rpx;
+  background: white;
+  border-radius: 5rpx;
+  margin-left:75rpx;
+}
+.note-text{
+  letter-spacing: 10rpx;
+
+}
+.userANView{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height:150rpx;
+  margin-top:126rpx;
+  line-height: 150rpx;
+}
+
+.userAva{
+  width:150rpx;
+  height:150rpx;
+  margin-left:80rpx;
+  border-radius: 150rpx;
+  border:1px solid white;
+}
+
+.userNick{
+font-size: 55rpx;
+letter-spacing: 10rpx;
+margin-left: 70rpx;
+color:white;
+
+}
+.selectedAgeView{
+  display: flex;
+  flex-direction: row;
+  margin-top:150rpx;
+
+  width:619rpx;
+  height:100rpx;
+  border: 1px solid white;
+  line-height: 100rpx;
+  letter-spacing: 10rpx;
+    background: white;
+justify-content:center;
+margin-left:66rpx;
+border-radius: 10rpx;
+}
+.selectedText{
+  font-size: 24rpx;
+  margin-left:50rpx;
+
+}
+.pickerAge{
+  font-size: 40rpx;
+  color:red;
+  margin-left:50rpx;
+}
+.postMsg{
+  padding:20rpx 10rpx 20rpx 10rpx;
+  width:600rpx;
+  height:300rpx;
+  border:1px solid white;
+  border-radius: 10rpx;
+  letter-spacing: 10rpx;
+  margin-left:66rpx;
+  margin-top: 7rpx;
+    background: white;
+
+}
+.submitLifeMsg{
+  margin-top:256rpx;
+ font-size:25rpx;
+ width:661rpx;
+  margin-left:46rpx;
+ height:100rpx;
+  border-radius: 5rpx;
+
+ letter-spacing: 10rpx;
+  background: white;
+ line-height: 100rpx; 
+}
+.img{
+  position: absolute;
+  top:0rpx;
+  left:0rpx;
+  z-index: -99;
+  width: 100%;
+  height:100%;
+  -webkit-filter: blur(5rpx);
+}
+button::after{
+  border:none;
+}
