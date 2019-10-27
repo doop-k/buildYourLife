@@ -1,4 +1,10 @@
-<view class="all-view" style="background:{{color}}">
+
+<import src="../template/back-template/back-template" />
+   <view class="nabar" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
+      <template is="backbtn" data="{{showback:'true',backtype:'backwhite',text:'推记:生活中的小故事'}}" />
+    </view>
+
+<view class="all-view" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
 
 
   <view class="tuiji-view" >
@@ -6,8 +12,8 @@
 
 <form bindsubmit="tuijiSubmit" bindtap='showtime'>
 <input name="tuiji_title" value="{{title_value}}" style="  border-bottom: 1px solid {{color}};" class="tuiji_title" placeholder='{{tuiji_title}}'></input>
-<label class="switch">{{switch_pre}}</label><switch class='switch-style' bindchange='switch_pre' color='#4ca8f2' checked="{{switch_checked}}" ></switch>
-<textarea name="tuiji_content" value="{{content_value}}"  maxlength='-1' class="tuiji_content" placeholder='{{tuiji_content}}' placeholder-class='tuiji_content_place'></textarea>
+<label class="switch">{{switch_pre}}</label><switch class='switch-style' bindchange='switch_pre' color='{{complementaryColor}}' checked="{{switch_checked}}" ></switch>
+<textarea name="tuiji_content" value="{{content_value}}"  maxlength='-1' class="tuiji_content" placeholder='{{tuiji_content}}' placeholder-style='letter-spacing:10rpx;margin-top:100rpx;'></textarea>
 <view class="bottom">
 <input maxlength='20' value="{{signature_value}}" name="tuiji_signature" class="tuiji_signature" placeholder='{{tuiji_signature}}'></input>
 <text class="time" >{{time}}</text>

@@ -35,7 +35,10 @@ Page({
   onLoad: function (options) {
    var  color=app.globalData.g_item_color
     var tuijiUrl = app.globalData.g_lifeUrl ;
-    var userDataInfo = wx.getStorageSync("userDataInfo");
+    var gradientColor = app.globalData.g_gradientColor;
+    var complementaryColor = app.globalData.g_complementary_color;
+    var userDataInfo = wx.getStorageSync
+("userDataInfo");
     var day = parseInt((utils.formatTime(new Date())).split(' ')[0].split('/')[2]) + 3;
     var year = parseInt((utils.formatTime(new Date())).split(' ')[0].split('/')[0]) + 10;
     var startYear = (utils.formatTime(new Date())).split('/')[0] + '-' + (utils.formatTime(new Date())).split('/')[1] + '-' + day;
@@ -48,7 +51,9 @@ Page({
       gender: userDataInfo.gender,
       avatarUrl: userDataInfo.avatarUrl,
       tuijiUrl: tuijiUrl,
-      color: color
+      color: color,
+      gradientColor: gradientColor,
+      complementaryColor: complementaryColor
     })
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
@@ -84,7 +89,7 @@ Page({
   tuijiSubmit:function(event){
     var that =this;
     var data = event.detail.value;
-    if (data.tuiji_title != "推记标题" & data.tuiji_content != "推记内容" & data.tuiji_signature != "tuiji_signature" & that.data.tuiji_past_due != "推记过期时间"){
+    if (data.tuiji_title != "" & data.tuiji_content != "" & data.tuiji_signature != "" & that.data.tuiji_past_due != "推记过期时间"){
       wx.showLoading({
         title: '记布正在工作中',
       })
@@ -143,6 +148,9 @@ Page({
       })
     }
     
+  },
+  backpage: function () {
+    wx.navigateBack();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

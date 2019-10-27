@@ -1,0 +1,74 @@
+.sigletuibu-view {
+  display: flex;
+  flex-direction: column;
+  width: 650rpx;
+  margin-left: 50rpx;
+}
+
+.tuibutop-view {
+  display: flex;
+  flex-direction: row;
+  height: 120rpx;
+  width: 100%;
+  line-height: 120rpx;
+}
+
+.nick-time {
+  width: 550rpx;
+  display: flex;
+  flex-direction: row;
+  height: 130rpx;
+  line-height: 130rpx;
+  justify-content: space-between;
+}
+
+.avatarurl {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100rpx;
+  margin-top: 12rpx;
+}
+
+.nickname {
+  color: #242424;
+  margin-left: 16rpx;
+}
+
+.howlong {
+  color: #98999b;
+  font-size: 26rpx;
+}
+
+.tuibucenter-view {
+  margin-left: 120rpx;
+  height: auto;
+  width: 520rpx;
+}
+
+.tuibumsg {
+  font-size: 26rpx;
+  color: #535354;
+}
+
+.tuibubottom-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 120rpx;
+  margin-top: 48rpx;
+  height: 100rpx;
+  width: 530rpx;
+  line-height: 100rpx;
+}
+
+.bottomtext {
+  color: #535354;
+  font-size: 26rpx;
+  margin-right: 30rpx;
+}
+
+.likeimg {
+  margin-top: 19rpx;
+  height: 60rpx;
+  width: 60rpx;
+}

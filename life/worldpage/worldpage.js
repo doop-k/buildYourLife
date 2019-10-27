@@ -11,59 +11,51 @@ Page({
     lifeMsgBox: [],
     animationAgeBox: {},
     msgBoxIsVisable: true,
+    nonedataflag: false,
     widthflag: true,
     extendBoxid: "",
     userDataInfo: {},
     tuibuData: {},
-    showcount: 5,
+    showcount: 2,
+    start: 0,
+    count: 10,
     input_text: "",
+    complementaryColor: "",
+    gradientColor: '',
+    nabarebackgroundstyle: '',
     xxflag: false,
     lock_flag: true,
     color: "",
-    updateFlag: true,
+    updateFlag: false,
     temp_tuibuData: {},
     placeholder: "输入你想了解的年龄",
     input_type: "number",
     scrollHeight: ""
   },
-  showUserPage: function(event) {
-    var lifeID = event.currentTarget.dataset.lifeid;
-    var nickName = event.currentTarget.dataset.nickname;
-    var avatarUrl = event.currentTarget.dataset.avatarurl;
-    var gender = event.currentTarget.dataset.gender;
-    var that = this;
-    console.log(gender);
-    if (that.data.userDataInfo.lifeID == lifeID) {
-      console.log(true)
-
-      wx.switchTab({
-        url: '../me/mypage',
-      })
-    } else {
-      wx.navigateTo({
-        url: '../me/showUserPage/showUserPage?lifeID=' + lifeID
-      })
-    }
-
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     var color = app.globalData.g_item_color;
+    var gradientColor = app.globalData.g_gradientColor;
+    var complementaryColor = app.globalData.g_complementary_color;
+    var offline_text = app.globalData.g_offline_text;
     console.log("onLoad")
     var lifeUrl = app.globalData.g_lifeUrl;
     var that = this;
     var userDataInfo = wx.getStorageSync("userDataInfo");
     var screenHeight = app.globalData.screenHeight;
-    var scrollHeight = (screenHeight * 2 - 410) + 'rpx';
+    var scrollHeight = (screenHeight * 2 - 300) + 'rpx';
     console.log(screenHeight)
     wx.setNavigationBarColor({
       frontColor: "#ffffff",
       backgroundColor: color
+
+
     })
 
-    if (screenHeight>=800){
+    if (screenHeight >= 800) {
       scrollHeight = (screenHeight * 2 - 560) + 'rpx';
     }
     that.setData({
@@ -76,94 +68,73 @@ Page({
     }
     that.setData({
       userDataInfo: userDataInfo,
-      color: color
+      color: color,
+      gradientColor: gradientColor,
+      complementaryColor: complementaryColor,
+      offline_text: offline_text,
+      nabarebackgroundstyle: 'linear-gradient(to right,#bfd4ef,' + color + ');'
     })
   },
-  processData: function(data) {
-    console.log(data);
-    var tempdata = [];
-    for (var i = 0; i < data.length; i++) {
-      var age = data[i].age;
-      var tuibuMsg = [];
-      for (var j = 0; j < data[i].tuibuMsg.length; j++) {
-        var temp = data[i].tuibuMsg[j];
-        var text = temp.tuibuMsg;
-        if (temp.tuibuMsg.length > 15) {
-          text = temp.tuibuMsg.substring(0, 15) + '...'
-        }
-        tuibuMsg.push({
-          bid: temp.bid,
-          lifeID: temp.lifeID,
-          avatarUrl: temp.avatarUrl,
-          text: text
-        })
+  processData: function(olddata) {
+    console.log('清洗数据-->start')
+    console.log(olddata);
+    var that=this;
+    var newData=[];
+    for (var i = 0; i < olddata.length;i++){
+      var data = olddata[i];
+      var tuibumsg=data.tuibuMsg;
+      if(data.tuibuMsg.toString().length>70){
+        tuibumsg = data.tuibuMsg.substring(0,70)+'···';
       }
-      tempdata.push({
-        age: age,
-        tuibuMsg: tuibuMsg,
-        boxHeight: "0rpx"
+      var nowtime = utils.splitTime(utils.formatTime(new Date()));
+      console.log(nowtime)
+      var tuibuMsgDate = utils.splitTime(data.tuibuMsgDate);
+      var howlong = utils.gethowlong(nowtime, tuibuMsgDate);
+      newData.push({
+        lifeID:data.lifeID,
+        nickname:data.nickname,
+        avatarurl:data.avatarUrl,
+        bid:data.bid,
+        age:data.age,
+        tuibumsg:tuibumsg,
+        howlong: howlong
       })
     }
-    console.log('ok')
-    console.log(tempdata);
-    return tempdata;
+    if (that.data.updateFlag){
+      newData = that.data.tuibuData.concat(newData);
+      that.setData({
+        updateFlag:false
+      })
+    }
+    that.setData({
+      tuibuData:newData
+    })
+    that.data.start += 10;
+    console.log(newData)
+    console.log('清洗数据-->end')
   },
   boxFristTap: function(event) {
     console.log(event);
     var age = event.currentTarget.dataset.age;
     this.boxChangeWidth(age, "310rpx");
   },
-  updateTabdata: function() {
-
-
+  updateTuibu: function() {
     var lifeUrl = app.globalData.g_lifeUrl;
     var that = this;
-    var showcount = that.data.showcount;
-    if (that.data.updateFlag) {
-      wx.request({
-        url: lifeUrl + '/getTuibuMsg?show=' + showcount,
-        success(res) {
-  
-          console.log(res)
-          if (res.data.data != 'none') {
-           
-            var newData = utils.processData(res.data.data);
-            if (that.data.tuibuData.length == newData.length) {
-              that.setData({
-                updateFlag: false
-              })
-            }
-            that.setData({
-              tuibuData: newData
-            })
-            console.log(that.data.showcount)
-            that.data.showcount += 5;
-            console.log(that.data.showcount)
-
-            console.log(that.data.tuibuData);
-            if (!that.data.extendBoxid) {
-              console.log("----------ture")
-              console.log(newData)
-
-              that.setData({
-                extendBoxid: newData[0].age
-              })
-            }
-            var number = that.data.extendBoxid;
-            console.log(number)
-            that.boxChangeWidth(number, "310rpx");
-
-          }
-
-        }
-      })
-    }
-    setTimeout(function() {
-      that.setData({
-        updateFlag: true
-      })
-
-    }, 5000)
+    var start = that.data.start;
+    var count = that.data.count;
+    that.setData({
+      updateFlag:true
+    })
+    wx.request({
+      url: lifeUrl + '/getTuibuMsg?start=' + start + '&count=' + count,
+      success(res) {
+        console.log(res);
+        if (res.data.data != 'none') {
+          that.processData(res.data.data);
+        } 
+      }
+    })
   },
   clean_input: function(event) {
     this.setData({
@@ -279,6 +250,26 @@ Page({
 
 
   },
+  showUserPage: function (event) {
+    var lifeID = event.currentTarget.dataset.lifeid;
+    var nickName = event.currentTarget.dataset.nickname;
+    var avatarUrl = event.currentTarget.dataset.avatarurl;
+    var gender = event.currentTarget.dataset.gender;
+    var that = this;
+    console.log(gender);
+    if (that.data.userDataInfo.lifeID == lifeID) {
+      console.log(true)
+
+      wx.switchTab({
+        url: '../me/mypage',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../me/showUserPage/showUserPage?lifeID=' + lifeID
+      })
+    }
+
+  },
   showMoreMsg: function(event) {
     var age = event.currentTarget.dataset.age;
     console.log(event.currentTarget.dataset);
@@ -304,31 +295,31 @@ Page({
     var lifeUrl = app.globalData.g_lifeUrl;
     var that = this;
     that.setData({
-      showcount: 5
+      start: 0
     })
-    that.updateTabdata();
-
-
-
+    wx.request({
+      url: lifeUrl + '/getTuibuMsg?start=' + that.data.start + '&count=' + that.data.count,
+      success(res) {
+        console.log(res);
+        if (res.data.data != 'none') {
+          that.processData(res.data.data);
+        }
+      },
+      fail(res){
+        wx.showToast({
+          title: that.data.offline_text,
+          icon:'none'
+        })
+      }
+      
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    var that = this;
-    var age = "";
-    console.log(that.data.tuibuData);
-    var data = that.data.tuibuData;
-    console.log(that.data.tuibuData.length);
-    for (var i = 0; i < data.length; i++) {
 
-      if (data[i].boxHeight == "310rpx") {
-        that.setData({
-          extendBoxid: data[i].age
-        })
-      }
-    }
   },
 
   /**

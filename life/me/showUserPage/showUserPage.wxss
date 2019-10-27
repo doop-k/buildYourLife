@@ -1,1 +1,10 @@
 @import "../htuibu-template/htuibu-template" ;
+@import "../../template/back-template/back-template";
+.pageindex-view{
+  position: absolute;
+  top:0rpx;
+  left:0rpx;
+  width: 100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.3);
+}

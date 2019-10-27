@@ -32,9 +32,14 @@ Page({
   onLoad: function (options) {
     var color = app.globalData.g_item_color;
     console.log(options.tempStation);
+    var gradientColor = app.globalData.g_gradientColor;
     var tempStation=wx.getStorageSync(options.tempStation)
     console.log(tempStation)
     var availableAge=[];
+    wx.setNavigationBarColor({
+      frontColor: "#ffffff",
+      backgroundColor: color
+    })
     if (tempStation.age>11){
       for (var i = 10; i < tempStation.age; i++) {
         availableAge.push(i);
@@ -48,6 +53,7 @@ Page({
         lifeAge: tempStation.age,
         gender: tempStation.gender,
         color: color,
+        gradientColor: gradientColor,
         isCanwrite: true,
       })
     }else{
@@ -64,8 +70,8 @@ Page({
   },
 
   sayLifeMsgTap:function(event){
+    var tuijiUrl = app.globalData.g_lifeUrl;
     console.log(event)
-
     var isCanwrite = event.currentTarget.dataset.iscanwrite;
     console.log("------------------");
     console.log(this.data.nickName);
@@ -77,7 +83,7 @@ Page({
     })
     wx.request({
       method:'POST',
-      url: 'http://47.107.33.86/postTuibuMsg?lifeID=' + this.data.lifeID + '&tuibuMsg=' + this.data.lifeMsg + '&tuibuAge=' + this.data.selected,
+      url: tuijiUrl+'/postTuibuMsg?lifeID=' + this.data.lifeID + '&tuibuMsg=' + this.data.lifeMsg + '&tuibuAge=' + this.data.selected,
       header: { 'content-type': 'application/x-www-form-urlencoded;charset=utf-8'},
       success(res){
         console.log(res);
@@ -112,6 +118,9 @@ Page({
     })
     
   
+  },
+  backpage: function () {
+    wx.navigateBack();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

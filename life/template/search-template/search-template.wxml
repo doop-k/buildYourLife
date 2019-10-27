@@ -1,7 +1,7 @@
 <template name="search">
-  <view class="search-view" style="background:{{color}}"   wx:if="{{topright_flag}}"    >
-    <icon class="search-icon" size="18" type='search' color='white'></icon>
-    <input placeholder='{{placeholder}}'   bindinput="bindinputTap" type="{{input_type}}" class="search-text" placeholder-class='search-text-place' value='{{input_text}}'></input>
+  <view class="search-view" style="background:{{color}}" wx:if="{{topright_flag}}">
+    <icon class="search-icon" size="18" type='search' color='{{iconcolor?iconcolor:"rgb(196, 189, 189)"}}'></icon>
+    <input placeholder='{{placeholder}}' bindinput="bindinputTap" type="{{input_type}}" class="search-text" placeholder-style=' color:{{placecolor?placecolor:"rgb(196, 189, 189)"}};' value='{{input_text}}'></input>
     <image src="/images/icon/xx.png" catchtap='clean_input' wx:if="{{xxflag}}" class="clean-img"></image>
   </view>
 

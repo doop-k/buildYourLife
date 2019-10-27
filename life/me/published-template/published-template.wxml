@@ -1,17 +1,17 @@
 <template name='published-template'>
-<view class="publishedView" style="background:{{color}}">
+<view class="publishedView" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
 
 <view class="userANView">
   <image class="userAva" src='{{avatarUrl}}' /> <text class="userNick">{{nickName}}</text> 
 </view>
-<view class="note" wx:if="{{!isCanwrite}}" ><text class="note-text">您还没达到写推布的年龄，但您仍可以观看别人的推布，看别人的精彩小故事，您还可以使用推记功能记下您内心中的话</text></view>
+<view class="note" wx:if="{{!isCanwrite}}" ><text class="note-text">您还没达到写推布的年龄，但您仍可以观看别人的推布，看别人的精彩小故事，您还可以使用推记功能记下生活中的小故事</text></view>
 
 <view class="selectedAgeView" wx:if="{{isCanwrite}}">
 
-<picker class="pickerAge" bindchange='selectedAge'  value="{{value}}" range="{{availableAge}}">{{selected}}</picker><text class="selectedText" style="color:{{color}}">岁至上</text>
+<picker class="pickerAge" bindchange='selectedAge'  value="{{value}}" range="{{availableAge}}">{{selected}}</picker><text class="selectedText" style="color:{{color}}">↓岁至上</text>
 </view>
 
-<textarea class='postMsg' wx:if="{{isCanwrite}}" value="{{lifeMsg}}" placeholder='写下你想对这个年纪的人说的话吧！' bindinput='lifeMsgInput' >
+<textarea class='postMsg' wx:if="{{isCanwrite}}" value="{{lifeMsg}}" placeholder='词由心声，这个年龄你有什么说的？' bindinput='lifeMsgInput' >
 </textarea>
 <button  style="color:{{color}}" data-iscanwrite="{{isCanwrite}}"  class="submitLifeMsg"   bindtap='sayLifeMsgTap'>{{isCanwrite?'发表':'去写推记'}}</button>
 </view>

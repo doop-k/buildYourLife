@@ -2,7 +2,11 @@
   "pages": [
     "life/worldpage/worldpage",
     "life/me/mypage",
+    "life/me/setting/setting",
+    "life/me/setting/myInfo/myInfo",
+    "life/me/setting/lifeVersion/lifeVersion",
     "life/me/mycollected/mycollected",
+    "life/me/setting/advices/advices",
     "life/tuiji/tuiji",
     "life/me/showUserPage/showUserPage",
     "life/longMsgPage/longMsgPage",
@@ -14,12 +18,14 @@
   ],
   "tabBar": {
     "borderStyle": "black",
+    "selectedColor": "#ebdc2f",
+    "color": "#bbbbbb",
     "list": [
       {
         "pagePath": "life/worldpage/worldpage",
         "text": "推布圈",
-        "iconPath": "/images/icon/lifeMsg.png",
-        "selectedIconPath": "/images/icon/lifeMsg-selected.png"
+        "iconPath": "/images/icon/lifeworld.png",
+        "selectedIconPath": "/images/icon/lifeworld-selected.png"
       },
       {
         "pagePath": "life/prompt/prompt",
@@ -30,8 +36,8 @@
       {
         "pagePath": "life/me/mypage",
         "text": "我",
-        "iconPath": "/images/icon/home.png",
-        "selectedIconPath": "/images/icon/home-selected.png"
+        "iconPath": "/images/icon/mine.png",
+        "selectedIconPath": "/images/icon/mine-selected.png"
       }
     ]
   },
@@ -39,7 +45,10 @@
     "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#4ca8f2",
-    "navigationBarTitleText": "一生"
+  
+    "navigationBarTitleText": "一生",
+      "disableScroll": true
+   
   },
   "sitemapLocation": "sitemap.json"
 }

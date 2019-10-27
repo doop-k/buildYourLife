@@ -9,10 +9,10 @@
 }
 .collected{
 position: fixed;
-top: 0rpx;
-right: 60rpx;
-width: 80rpx;
-height: 80rpx;
+top: 150rpx;
+right: 70rpx;
+width: 60rpx;
+height: 100rpx;
 }
 
 .userImgNice {
@@ -29,13 +29,13 @@ height: 80rpx;
   height: 100rpx;
   margin-left: 50rpx;
   border-radius: 100rpx;
+
 }
 
 .userNice {
-  font-size: 60rpx;
-  letter-spacing: 10rpx;
+  font-size: 40rpx;
   margin-left: 30rpx;
-  margin-top: 20rpx;
+  margin-top: 28rpx;
   color: black;
 }
 
@@ -47,11 +47,11 @@ height: 80rpx;
 }
 
 .bottomTools {
-  margin: 10rpx 20rpx 20rpx 20rpx;
+  margin: 100rpx 20rpx 20rpx 20rpx;
   display: flex;
   flex-direction: row;
-  height: 100rpx;
-  line-height: 100rpx;
+  height: 60rpx;
+  line-height: 70rpx;
 }
 
 .msgLevel {
@@ -70,9 +70,9 @@ height: 80rpx;
 }
 
 .likeImg {
-  width: 90rpx;
-  height: 90rpx;
-  margin-right: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 30rpx;
 }
 
 .time {

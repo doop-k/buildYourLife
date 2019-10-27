@@ -1,0 +1,5 @@
+<view class="setting-view" style='background:linear-gradient({{color}},white);'>
+<text class="txt"  catchtap='openMyInfo' style="margin-bottom:30rpx">我的信息</text>
+<text class="txt"  catchtap="openAdvices">小程序建议</text>
+<text class="txt"  catchtap="openVersion">版本详情</text>
+</view>

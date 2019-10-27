@@ -1,0 +1,43 @@
+.siglemsg-view {
+  height: 80rpx;
+  width: 600rpx;
+  display: flex;
+  flex-direction: row;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.msgimg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  /* border-radius: 80rpx; */
+}
+
+.msgcontent {
+  color: white;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}
+
+.msgtime {
+  color: black;
+  font-size: 19rpx;
+  margin-left: 30rpx;
+}
+
+.reddot {
+  position: absolute;
+  right: 90rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: red;
+  border-radius: 20rpx;
+}
+
+.promptdel {
+  font-size: 24rpx;
+  color: red;
+  margin-left: 25rpx;
+  margin-top: 14rpx;
+}

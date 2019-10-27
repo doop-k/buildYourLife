@@ -24,12 +24,10 @@ width:500rpx;
 color:white;
 
 }
-.search-text-place{
-  color:rgb(196, 189, 189);
-}
+
 .clean-img{
-  width:25rpx;
-  height:25rpx;
+  width:30rpx;
+  height:30rpx;
   position: absolute;
   right:40rpx;
   margin-top:20rpx;

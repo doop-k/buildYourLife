@@ -1,0 +1,100 @@
+/* life/agebox-template/agebox-templata.wxss */
+
+.tuibuMsg-box {
+  width: 700rpx;
+  height: auto;
+  margin-bottom: 100rpx;
+  box-shadow: 5px 5px 20px 5px #aaa;
+  margin-left: 25rpx;
+  border-radius: 10rpx;
+}
+
+.headView {
+  width: 100%;
+  display: flex;
+  flex-direction: raw;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 5px 5px 0.5px 0.5px;
+  color: white;
+  margin-bottom: 1rpx;
+}
+
+.age_number {
+  margin-left: 40%;
+  font-size: 35rpx;
+}
+
+.age_text {
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+  font-size: 25rpx;
+  letter-spacing: 2rpx;
+}
+
+.moreimgView {
+  margin-left: 220rpx;
+  height: 100%;
+  width: 100rpx;
+}
+
+.moreimg {
+  width: 50rpx;
+  height: 15rpx;
+  margin-top: 37rpx;
+}
+
+.moreimgView:active {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bodyView {
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  overflow: hidden;
+  width: 600rpx;
+  height: auto;
+  padding: 10rpx 50rpx 50rpx 50rpx;
+}
+
+.howlong {
+  width: 100%;
+  height: 50rpx;
+  text-align: right;
+  padding-right: 50rpx;
+  color: white;
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+
+.userinfo-view {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+
+}
+
+.userimg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  margin-left: 50rpx;
+}
+
+.username {
+  font-size: 35rpx;
+  color: white;
+  margin-left: 100rpx;
+}
+
+.tuibumsg {
+  color: white;
+  font-size: 30rpx;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  padding-top:50rpx;
+}

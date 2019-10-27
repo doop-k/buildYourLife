@@ -1,4 +1,5 @@
 var app = getApp();
+const io = require("../../utils/weapp.socket.io.js");
 // life/me/mypage.js
 Page({
 
@@ -15,7 +16,10 @@ Page({
     nickName: "",
     gender: "",
     cloth: [],
-    color: ""
+    color: "",
+    height: "",
+    colledCount: "",
+    tuibuCount: ""
 
   },
   bindDateChange: function(event) {
@@ -38,36 +42,34 @@ Page({
       url: '../htuiji/htuiji?lifeID=' + this.data.lifeID,
     })
   },
-  opencolled:function(event){
-    var lifeID=event.currentTarget.dataset.lifeid;
+  opencolled: function(event) {
+    var lifeID = event.currentTarget.dataset.lifeid;
     console.log(lifeID)
     wx.navigateTo({
-      url: './mycollected/mycollected?lifeID='+lifeID,
+      url: './mycollected/mycollected?lifeID=' + lifeID,
     })
   },
   acceptAgeTap: function() {
     var lifeUrl = app.globalData.g_lifeUrl;
     var that = this;
     wx.showModal({
-      title: '提 示',
-      content: '小程序一但设置年龄，将无法对其进行更改，确保输入了正确的出生日期。您设置的出生日期：' + that.data.userDate,
+      title: '一 生',
+      content: '小程序一但设置年龄，将无法对其进行更改，确保输入了正确的出生日期。您设置的出生日期为：' + that.data.userDate,
       success(res) {
         if (res.confirm) {
           that.setData({
             ageSetting: false
           })
-          var data = that.data;
-          console.log(that.data.lifeID);
           wx.request({
             method: 'POST',
-            url: lifeUrl + '/postUserInfoData?lifeID=' + that.data.lifeID + '&nickName=' + that.data.nickName + '&userDate=' + that.data.userDate + '&avatarUrl=' + that.data.avatarUrl + '&gender=' + that.data.gender,
+            url: lifeUrl + '/postUserAge?lifeID=' + that.data.lifeID + '&userDate=' + that.data.userDate,
             success(res) {
               console.log(res);
-              if(res.data.data!='none'){
+              if (res.data.data != 'none') {
                 that.setData({
-                  userAge:res.data.data
-                  })
-                var ouserDataInfo=wx.getStorageSync("userDataInfo");
+                  userAge: res.data.data
+                })
+                var ouserDataInfo = wx.getStorageSync("userDataInfo");
                 var nuserDataInfo = {
                   nickName: ouserDataInfo.nickName,
                   avatarUrl: ouserDataInfo.avatarUrl,
@@ -82,7 +84,7 @@ Page({
                   data: nuserDataInfo,
                 });
               }
-   
+
 
             }
           })
@@ -95,7 +97,7 @@ Page({
   sayMsgTap: function() {
     console.log("sayMsgTap")
     var that = this;
-  if (that.data.userAge) {
+    if (that.data.userAge) {
       var tempStation = {
         lifeID: that.data.lifeID,
         nickName: that.data.nickName,
@@ -108,19 +110,20 @@ Page({
         data: tempStation,
       })
       wx.navigateTo({
-          url: './published/published?tempStation=' + "tempStation"
-      })}
-        else {
-          that.settingAge();
-        }
+        url: './published/published?tempStation=' + "tempStation"
+      })
+    } else {
+      that.settingAge();
+    }
 
   },
   saytuiji: function(event) {
     console.log(this.data.userAge)
     if (this.data.userAge) {
-    wx.navigateTo({
-      url: '../tuiji/tuiji',
-    })}else{
+      wx.navigateTo({
+        url: '../tuiji/tuiji',
+      })
+    } else {
       this.settingAge();
     }
 
@@ -129,7 +132,7 @@ Page({
     var that = this;
     wx.showModal({
       title: '提 示',
-      content: '您还为设置年龄，是否跳转到年龄填写页',
+      content: '您还未设置年龄，是否跳转到年龄填写页',
       success(res) {
         if (res.confirm) {
           that.setData({
@@ -151,22 +154,15 @@ Page({
     that.setData({
       color: app.globalData.g_item_color
     })
-    if (options.ageSetting){
-      that.setData({
-        ageSetting: options.ageSetting
-      })
-    }
-    // if (!this.data.loginSuccess){
-    //   wx.getSetting({
-    //     success(res){
-    //       res.authSetting={
-    //         "scope.userInfo": false
-    //       }
-    //     }
-    //   })
-    // }
-    
     var userDataInfo = wx.getStorageSync("userDataInfo");
+    var offline_text = app.globalData.g_offline_text;
+    var screenHeight = app.globalData.screenHeight;
+    var height = screenHeight * 2 + 'rpx'
+    that.setData({
+      height: height,
+      offline_text: offline_text
+    })
+
     if (userDataInfo) {
       console.log(userDataInfo);
       this.setData({
@@ -175,16 +171,13 @@ Page({
         avatarUrl: userDataInfo.avatarUrl,
         nickName: userDataInfo.nickName,
         gender: userDataInfo.gender,
-        userAge: userDataInfo.age
+        userAge: userDataInfo.userAge
       })
+
     }
-  
+
 
   },
-  clothAgeTap: function(event) {
-    console.log(event.currentTarget.dataset.age);
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -193,13 +186,11 @@ Page({
       conLineHeight: '940rpx'
     })
   },
-  loginLife: function() {
-  },
+
   getUserInfoTap: function(event) {
     console.log(event);
     if (event.detail.userInfo) {
       this.wxlogin();
-
     } else {
 
     }
@@ -218,32 +209,95 @@ Page({
             },
             success: function(res) {
               console.log(res)
+              var socketUrl = 'wss://www.famyun.com/websocket';
+              var socket = io(socketUrl)
+              socket.on(res.data.lifeID, function(msg) {
+                console.log('有消息')
+                console.log(msg);
+                wx.showTabBarRedDot({
+                  index: 1,
+                })
+                var test = "有人点赞了你的推布"
+                if (msg.data == 'leavemsg')
+                  test = '有人评论了你的推布'
+                wx.showToast({
+                  title: test,
+                  icon: 'none'
+                })
+              })
               that.setData({
                 lifeID: res.data.lifeID,
                 loginSuccess: true,
               })
               wx.request({
                 url: lifeUrl + '/getLifeUserInfo?lifeID=' + res.data.lifeID,
-                success(res){
-                  if(res.data.data!="none"){
-                    var data=res.data.data;
-                    that.setData({
-                      userAge: data.userAge,
-                      nickName:data.nickName,
-                      gender:data.gender,
-                      avatarUrl:data.avatarUrl,
-                      lifeID:data.lifeID
+                success(res) {
+                  console.log(res);
+                  if (res.data.data != "none") {
+                    var data = res.data.data;
+                    var lifeID = data.lifeID;
+                    var age = data.age;
+                    var nickName = data.nickName;
+                    var avatarUrl = data.avatarUrl;
+                    var gender = data.gender;
+                    //发起websocket请求
+                    wx.getUserInfo({
+                      success(res) {
+                        var userinfogender;
+                        switch (res.userInfo.gender) {
+                          case 0:
+                            userinfogender = '未设置';
+                            break;
+                          case 1:
+                            userinfogender = '男';
+                            break;
+                          case 2:
+                            userinfogender = '女';
+                            break;
+                        }
+                        console.log(res);
+
+                        if (res.userInfo.avatarUrl != data.avatarUrl | res.userInfo.nickName != data.nickName | userinfogender != data.gender) {
+                          wx.request({
+                            url: lifeUrl + '/changeUserData?lifeID=' + userDataInfo.lifeID + '&nickName=' + res.userInfo.nickName + '&avatarUrl=' + res.userInfo.avatarUrl + '&gender=' + userinfogender,
+                            success(res) {
+
+                              var data = res.data.data;
+                              age = data.age;
+                              nickName = data.nickName;
+                              avatarUrl = data.avatarUrl;
+                              gender = data.gender;
+                            }
+                          })
+                        }
+                      }
+
                     })
-                  }else{
-                    if (!that.data.userAge) {
-                      that.setData({
-                        ageSetting: true
-                      })
+                    that.setData({
+                      userAge: age,
+                      nickName: nickName,
+                      gender: gender,
+                      avatarUrl: avatarUrl,
+                      lifeID: lifeID
+                    })
+                    var userDataInfo = {
+                      userAge: age,
+                      nickName: nickName,
+                      gender: gender,
+                      avatarUrl: avatarUrl,
+                      lifeID: lifeID
                     }
+                    wx.setStorage({
+                      key: 'userDataInfo',
+                      data: userDataInfo,
+                    });
+                  } else {
+                    console.log(false)
+                    that.getUserInfo();
                   }
                 }
               })
-              that.getUserInfo();
+
             },
             fail: function(res) {
               console.log('请求错误');
@@ -258,6 +312,8 @@ Page({
     });
   },
   getUserInfo: function() {
+    var lifeUrl = app.globalData.g_lifeUrl;
+    console.log(lifeUrl)
     console.log("getUserInfo")
     var userDataInfo = {};
     var that = this;
@@ -277,12 +333,14 @@ Page({
             break;
 
         }
-
         userDataInfo = {
             nickName: res.userInfo.nickName,
             avatarUrl: res.userInfo.avatarUrl,
             lifeID: that.data.lifeID,
-            gender: gender
+            gender: gender,
+            country: res.userInfo.country,
+            province: res.userInfo.province,
+            city: res.userInfo.city
           },
           console.log(userDataInfo);
         that.setData({
@@ -295,6 +353,21 @@ Page({
           key: 'userDataInfo',
           data: userDataInfo,
         });
+        console.log("wx.request")
+        wx.request({
+          method: 'POST',
+          url: lifeUrl + '/postUserInfoData?lifeID=' + that.data.lifeID + '&nickName=' + that.data.nickName + '&avatarUrl=' + that.data.avatarUrl + '&gender=' + that.data.gender + '&country=' + that.data.country + '&province=' + that.data.province + '&city=' + that.data.city,
+          success(res) {
+            console.log(res);
+            if (res.data.data == "done") {
+              console.log("done");
+              that.setData({
+                ageSetting: true
+              })
+            }
+
+          }
+        })
 
       }
     })
@@ -302,37 +375,42 @@ Page({
   },
   cannelAgeTap: function(event) {
     this.setData({
-
       ageSetting: false
+    })
+
+  },
+  openSetting: function() {
+    wx.navigateTo({
+      url: './setting/setting?lifeID=' + this.data.lifeID,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    // var that = this;
-    // var lifeUrl = app.globalData.g_lifeUrl;
-    // console.log("onShow")
-    // wx.request({
-    //   url: lifeUrl + '/getLifeUserInfo?lifeID=' + that.data.lifeID,
-    //   success(res) {
-    //     console.log(res);
-    //     if (res.data.data != "none") {
-    //       console.log("res.data!=none")
-    //       var cloth = res.data.data.cloth;
-    //       console.log("cloth---------:")
-    //       console.log(cloth);
-    //       if (cloth[0]) {
-    //         console.log("cloth[0] != null")
-    //         that.setData({
-    //           cloth: cloth
-    //         })
-    //       }
-    //     }
-
-
-    //   }
-    // })
+    var that = this;
+    var lifeUrl = app.globalData.g_lifeUrl;
+    wx.request({
+      url: lifeUrl + '/getLifeUserInfo?lifeID=' + that.data.lifeID,
+      success(res) {
+        if (res.data.data !== 'none') {
+          console.log(res)
+          that.setData({
+            colledCount: res.data.data.colledCount,
+            tuibuCount: res.data.data.tuibuCount
+          })
+        }
+      },
+      fail(res){
+        wx.showToast({
+          title: that.data.offline_text,
+          icon:'none'
+        })
+      }
+    })
   },
   previewImage: function(event) {
     console.log('s')

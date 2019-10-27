@@ -1,0 +1,9 @@
+<template name="prompt">
+<view class="siglemsg-view" style="background:linear-gradient(to right,{{gradientColor}},{{color}});"  bindtap='openmsg' data-msgid="{{msgId}}"  data-bid="{{bid}}" >
+<image catchtap='showUserpage' data-lifeid="{{lifeID}}" class="msgimg" src='{{avatarUrl}}'></image>
+<text class="msgcontent"  >{{msgcontent}}</text>
+<text class="msgtime">{{msgtime}}</text>
+<text class="promptdel" data-msgid="{{msgId}}" catchtap='delprompt' data-isread="{{isread}}">删除</text>
+<text wx:if="{{isread}}" class="reddot"></text>
+</view>
+</template>

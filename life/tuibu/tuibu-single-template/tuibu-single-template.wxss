@@ -1,24 +1,28 @@
 .single-tuibu-view {
   direction: flex;
   flex-direction: column;
-  width: 700rpx;
+  width: 660rpx;
   margin-left: 25rpx;
   height: auto;
-  border: 1rpx solid black;
-
   border-radius: 10rpx 10rpx 0rpx 0rpx;
-  padding-top: 50rpx;
+  border-bottom: none;
+  padding:50rpx 20rpx  0rpx 20rpx;
 }
 
 .delbtn {
   width: 650rpx;
   margin-left: 55rpx;
   border: 1rpx solid #ff675b;
+  border-top:none;
   height: 60rpx;
   line-height: 60rpx;
   color: #ff675b;
   border-radius: 0rpx 0rpx 15rpx 15rpx;
   background: white;
+  font-size: 26rpx;
+}
+.delbtn:active{
+background: rgba(0,0,0,0.1);
 }
 
 button::after {
@@ -30,16 +34,19 @@ button::after {
   width: 100%;
   margin-left: 40rpx;
   margin-bottom: 40rpx;
-  letter-spacing: 5rpx;
+  letter-spacing: -1rpx;
   font-size: 30rpx;
+  color:#666;
 }
 
 .lifeMsgAge-view {
-  width: 100%;
+  width: 700rpx;
   height: 80rpx;
   display: flex;
   flex-direction: row;
   margin-top: 100rpx;
+  justify-content: space-around;
+  margin-left:-20rpx;
 }
 
 .data-view {
@@ -50,13 +57,13 @@ button::after {
 }
 
 .dynamic-text {
-  font-size: 35rpx;
+  font-size: 26rpx;
   color: white;
 }
 
 .default-text {
   margin-left: 8rpx;
-  font-size: 25rpx;
+  font-size: 26rpx;
   color: white;
 }
 
@@ -69,7 +76,7 @@ button::after {
 
 .time-text {
   font-size: 25rpx;
-  color: #000;
+  color: #666;
   margin-top: 100rpx;
   position: absolute;
   right: 60rpx;

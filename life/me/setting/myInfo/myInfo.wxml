@@ -1,0 +1,9 @@
+<view style="background:linear-gradient(#00d9ff,{{color}});" class="info-view">
+<view class="userinfo" >
+<image src='{{avatarUrl}}' class="userimg"></image>
+<text class="text">昵称：{{nickname}}</text>
+<text class="text">年龄：{{age}}</text>
+<text class="text">性别：{{gender}}</text>
+</view>
+
+</view>

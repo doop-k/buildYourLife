@@ -1,1 +1,11 @@
 @import "./longMsgPage-template/longMsgPage-template" ;
+@import "../template/back-template/back-template";
+.nabar {
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  height: 150rpx;
+  z-index:99;
+  overflow: hidden;
+
+}

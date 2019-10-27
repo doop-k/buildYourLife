@@ -1,15 +1,77 @@
 @import "../template/moreLifeMsg-template/single-lifeMsg-template/single-lifeMsg-template";
+@import "../template/moretuibu-sigle-template/sigle-template";
 @import "../template/search-template/search-template";
-.more-lifeMsg-view{
-  padding-top:20rpx;
-  width:880rpx;
+@import "../template/back-template/back-template";
+
+.nabar {
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  height: 150rpx;
+}
+
+.more-lifeMsg-view {
+  padding-top: 210rpx;
+  width: 880rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
 }
-.single-lifeMsg-view{
-  float:left;
-  margin-left:10rpx;
- margin-bottom: 10rpx;
+
+.children-view {
+  width: 100%;
+  border-bottom: 1rpx solid #cdcdcd;
+  padding-top:30rpx;
+  margin-top:30rpx;
+}
+
+.single-lifeMsg-view {
+  float: left;
+  margin-left: 25rpx;
+  margin-bottom: 37rpx;
+  margin-top: 10rpx;
+}
+
+.top-tool-view {
+  position: fixed;
+  top: 150rpx;
+  left: 0rpx;
+  display: flex;
+  flex-direction: row;
+  z-index: 99;
+}
+
+.search-view {
+  width: 613rpx;
+  border: 0rpx;
+  border-radius: 0rpx;
+  margin-left: -1rpx;
+  border-right: 1rpx solid white;
+}
+
+.changModebtn {
+  width: 138rpx;
+  height: 60rpx;
+  color: white;
+  border-radius: 0rpx;
+  font-size: 26rpx;
+  margin-left: 4rpx;
+  background: transparent;
+}
+
+changModebtn:active {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+button::after {
+  border: none;
+}
+
+.clean-img {
+  right: 16rpx;
+  z-index: 99;
+}
+
+.search-icon {
+  margin-top: 12rpx;
 }

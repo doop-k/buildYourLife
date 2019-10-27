@@ -2,11 +2,15 @@
 <template name="age_box_template">
 <view class="age_box-view" data-age="{{age}}"  catchtap='boxFristTap'>
 <view  class="age_box"   >
-<view class="headView" style="background:{{color}}"     >
+<view class="headView" style="background:{{complementaryColor}}"     >
 <text class="age_number">{{age}}</text>
-<text class="age_text">岁的大家</text>
+<text class="age_text">岁</text>
+<view class="moreimgView" data-age="{{age}}" catchtap='showMoreMsg'>
+<image src="/images/icon/more.png" class="moreimg"></image>
 </view>
-<view class="bodyView" style="height:{{boxHeight}};background:{{color}}" >
+
+</view>
+<view class="bodyView" style="background:{{color}}" >
 <block wx:for="{{tuibuMsg}}" wx:for-item="data">
 <view class="msgitembox"  >
 <template is="messageBox" data="{{tuibuMsg:data.text,avatarUrl:data.avatarUrl,lifeID:data.lifeID,age:age,bid:data.bid}}" />

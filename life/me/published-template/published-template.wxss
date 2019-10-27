@@ -1,108 +1,124 @@
-.publishedView{
+.publishedView {
   display: flex;
   flex-direction: column;
   text-align: center;
-  width:100%;
-  height:100%;
-  position:absolute;
-
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
-.note{
+
+.note {
   width: 600rpx;
-  height:300rpx;
-  padding-top:70rpx;
+  height: 300rpx;
+  padding-top: 70rpx;
   text-align: center;
-  margin-top:300rpx;
+  margin-top: 300rpx;
   background: white;
   border-radius: 5rpx;
-  margin-left:75rpx;
+  margin-left: 75rpx;
 }
-.note-text{
-  letter-spacing: 10rpx;
 
+.note-text {
+  letter-spacing: 10rpx;
 }
-.userANView{
+
+.userANView {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height:150rpx;
-  margin-top:126rpx;
+  height: 150rpx;
+  margin-top: 190rpx;
   line-height: 150rpx;
 }
 
-.userAva{
-  width:150rpx;
-  height:150rpx;
-  margin-left:80rpx;
+.userAva {
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: 80rpx;
   border-radius: 150rpx;
-  border:1px solid white;
+  border: 1px solid white;
 }
 
-.userNick{
-font-size: 55rpx;
-letter-spacing: 10rpx;
-margin-left: 70rpx;
-color:white;
-
+.userNick {
+  font-size: 40rpx;
+  letter-spacing: 10rpx;
+  margin-left: 70rpx;
+  color: white;
 }
-.selectedAgeView{
+
+.selectedAgeView {
   display: flex;
   flex-direction: row;
-  margin-top:150rpx;
-
-  width:619rpx;
-  height:100rpx;
+  margin-top: 150rpx;
+  width: 619rpx;
+  height: 100rpx;
   border: 1px solid white;
   line-height: 100rpx;
   letter-spacing: 10rpx;
-    background: white;
-justify-content:center;
-margin-left:66rpx;
-border-radius: 10rpx;
+  background: white;
+  justify-content: center;
+  margin-left: 66rpx;
+  border-radius: 10rpx;
 }
-.selectedText{
-  font-size: 24rpx;
-  margin-left:50rpx;
 
+.selectedText {
+  font-size: 24rpx;
+  margin-left: 30rpx;
 }
-.pickerAge{
+
+.pickerAge {
   font-size: 40rpx;
-  color:red;
-  margin-left:50rpx;
+  color: red;
+  margin-left: 50rpx;
 }
-.postMsg{
-  padding:20rpx 10rpx 20rpx 10rpx;
-  width:600rpx;
-  height:300rpx;
-  border:1px solid white;
+
+.postMsg {
+  padding: 20rpx 10rpx 20rpx 10rpx;
+  width: 600rpx;
+  height: 300rpx;
+  border: 1px solid white;
   border-radius: 10rpx;
   letter-spacing: 10rpx;
-  margin-left:66rpx;
+  margin-left: 66rpx;
   margin-top: 7rpx;
-    background: white;
-
-}
-.submitLifeMsg{
-  margin-top:256rpx;
- font-size:25rpx;
- width:661rpx;
-  margin-left:46rpx;
- height:100rpx;
-  border-radius: 5rpx;
-
- letter-spacing: 10rpx;
   background: white;
- line-height: 100rpx; 
 }
-.img{
+
+/* .submitLifeMsg {
+  margin-top: 203rpx;
+  font-size: 25rpx;
+  width: 661rpx;
+  margin-left: 46rpx;
+  height: 100rpx;
+  border-radius: 5rpx;
+  letter-spacing: 10rpx;
+  background: white;
+  line-height: 100rpx;
+} */
+button {
+  position: fixed;
+  bottom: 80rpx;
+  width: 660rpx;
+  line-height: 100rpx;
+  margin-left:46rpx;
+  height: 100rpx;
+  color:white;
+  font-size: 24rpx;
+  letter-spacing: 10rpx;
+  background: white;
+  border-radius: 5rpx;
+}
+
+.img {
   position: absolute;
-  top:0rpx;
-  left:0rpx;
+  top: 0rpx;
+  left: 0rpx;
   z-index: -99;
   width: 100%;
-  height:100%;
+  height: 100%;
   -webkit-filter: blur(5rpx);
 }
-button::after{
-  border:none;
+
+button::after {
+  border: none;
 }

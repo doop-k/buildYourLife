@@ -1,4 +1,11 @@
 <import src="./longMsgPage-template/longMsgPage-template" />
-<view>
-<template is="longMsgPage" data="{{...tuibuData,leaveMsgData:leaveMsgData,color:color,leaveMsgValue:leaveMsgValue,scrollHeight:scrollHeight}}" />
+<!-- <view class="nabar" style="background:linear-gradient(to right,#00d9ff,{{color}});">
+  <template is="backbtn" data="{{showback:'true',backtype:'backwhite',text:'推布详情'}}" />
+</view> -->
+<import src="../template/back-template/back-template" />
+   <view class="nabar" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
+      <template is="backbtn" data="{{showback:'true',backtype:'backwhite',text:'推布详情'}}" />
+    </view>
+<view style="margin-top:150rpx;">
+<template is="longMsgPage" data="{{...tuibuData,leaveMsgData:leaveMsgData,color:color,leaveMsgValue:leaveMsgValue,scrollHeight:scrollHeight,likeanimation:likeanimation}}" />
 </view>

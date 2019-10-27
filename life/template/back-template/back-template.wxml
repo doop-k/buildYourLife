@@ -1,0 +1,9 @@
+<template name="backbtn">
+<view class="back-view" >
+<view class="back-img-view" bindtap='backpage' wx:if="{{showback}}"  >
+<image  src='{{backtype=="backwhite" ? "/images/icon/backwhite.png":"/images/icon/backblack.png" }}' class="backimg"></image>
+</view>
+
+<text class="btntext">{{text}}</text>
+</view>
+</template>

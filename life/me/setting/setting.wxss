@@ -1,0 +1,28 @@
+/* life/me/setting/setting.wxss */
+.setting-view{
+  position: fixed;
+  padding-top:50rpx;
+  top:0rpx;
+  left:0rpx;
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  width: 100%;
+}
+.txt{
+  width: 700rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-left:25rpx;
+  background: #ebdc2f;
+  color:white;
+  font-size: 30rpx;
+  border-radius:5rpx;
+  margin-top:1rpx;
+  letter-spacing:5rpx;
+
+}
+.txt:active{
+  background:rgba(255,255,255,0.3);
+}

@@ -1,26 +1,40 @@
-@import "./htuibu-template/htuibu-template" ;
+@import "./htuibu-template/htuibu-template";
+
 page {
 }
-.btn-view{
-  margin-top:80rpx;
+
+.mypage-view {
+  position: absolute;
+  top:0rpx;
+  left:0rpx;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height:100%;
+}
+
+.btn-view {
+  margin-top: 80rpx;
   width: 100%;
   text-align: center;
+  position: absolute;
+  bottom: 50rpx;
 }
-.inputText {
-  margin-top:10rpx;
-  width: 600rpx;
-  height: 80rpx;
+button{
+  margin-top: 20rpx;
+  width: 700rpx;
+  height: 100rpx;
   font-size: 30rpx;
   letter-spacing: 10rpx;
   text-align: center;
-  line-height: 80rpx;
+  line-height: 100rpx;
   border-radius: 5rpx;
-
-  /* background-color:#4ca8f2; */
- 
+  background: transparent;
+  color:white;
+  border:1rpx solid white;
 }
-button::after{
-  border:none;
+
+button::after {
+  border: none;
 }
 
 .loginPage {
@@ -49,13 +63,15 @@ button::after{
   color: white;
   font-size: 40rpx;
 }
-.mycolled{
-  width:100rpx;
-  height:100rpx;
+
+.mycolled {
+  width: 100rpx;
+  height: 100rpx;
   position: fixed;
-  top:0rpx;
-  right:20rpx;
+  top: 0rpx;
+  right: 20rpx;
 }
+
 .cutLine {
   width: 100%;
   height: 40rpx;
@@ -81,7 +97,7 @@ button::after{
   text-align: right;
   padding-right: 40rpx;
   padding-top: 100%;
-background: white;
+  background: white;
   font-size: 70rpx;
   color: black;
 }
@@ -105,6 +121,8 @@ background: white;
   text-align: center;
   height: auto;
   color: black;
+  margin-top:150rpx;
+
 }
 
 .bornDate {
@@ -157,6 +175,20 @@ background: white;
   line-height: 100rpx;
   letter-spacing: 10rpx;
 }
-.mypage-view{
-  
+.settingbtn{
+  position: fixed;
+  left:0rpx;
+  top:61rpx;
+  width:200rpx;
+  height:58rpx;
+  color:rgb(70, 68, 68);
+  border-radius: 0rpx 10rpx 10rpx 0rpx;
+  line-height: 58rpx;
+  background: rgba(255,255,255,0.3);
+  border-color:rgba(255,255,255,0.3);
+}
+.settingbtn:active{
+  color:white;
+  border:none;
+  background: rgba(0,0,0,0.5);
 }

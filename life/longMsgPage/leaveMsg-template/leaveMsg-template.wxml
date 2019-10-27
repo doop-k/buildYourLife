@@ -13,11 +13,11 @@
  <view class="delbtn-view"></view> -->
 <template name='t_leaveMsg'>
 
-<view class="t-leaveMsg"  style='background:{{color}};'>
+<view class="t-leaveMsg"  >
 <image class="t-avatarimg" bindtap='openleaveuser'  data-lifeid="{{lifeID}}" src='{{avatarUrl}}'></image>
 
 <view class="t-msgtime"    >
-<text class="t-text">{{leaveMsg}}</text>
+<text class="t-text" selectable >{{leaveMsg}}</text>
 <view class="t-del">
 <text class="t-time">{{time}}</text>
 <text wx:if="{{canDel}}" data-leaveid="{{leaveId}}" catchtap='rightdel' class="del-text">删除</text>

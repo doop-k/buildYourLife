@@ -41,6 +41,7 @@ Page({
    var  h_lifeID=options.lifeID;
     var s_lifeID=userDataInfo.lifeID;
     var color =app.globalData.g_item_color;
+    var complementaryColor = app.globalData.g_complementary_color;
     var isSelf=1;
     var topright_flag=true;
     var search_flag=true;
@@ -58,6 +59,7 @@ Page({
 
     }
     this.setData({
+      complementaryColor: complementaryColor,
       h_lifeID: h_lifeID,
       s_lifeID: s_lifeID,
       scrollHeight: scrollHeight,
@@ -123,7 +125,7 @@ Page({
     var data = [];
     for (var i = 0; i < odata.length; i++) {
       var temp_data = odata[i];
-
+  
       data.push({
         title: temp_data.title,
         content: temp_data.content,
@@ -155,7 +157,7 @@ Page({
   },
   
   bindinputTap:function(event){
-    var tuijiUrl = app.globalData.g_lifeUrl + ':3981';
+    var tuijiUrl = app.globalData.g_lifeUrl ;
     var that =this;
     var text = event.detail.value
     var flag=false;
@@ -183,6 +185,9 @@ Page({
       }
     })
 
+  },
+  backpage: function (event) {
+    wx.navigateBack();
   },
   clean_input:function(event){
     console.log(this.data.temp_tuijiData);

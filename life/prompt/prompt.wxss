@@ -1,15 +1,42 @@
-.prompt-view{
-   position: fixed;
-  top:30%;
-  left:75rpx;
-  width:600rpx;
-  height:200rpx;
+@import "./prompt-template/prompt-template";
+@import "../template/back-template/back-template";
+
+.nabar {
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  height: 150rpx;
+}
+
+.noneprompt-view {
+  position: fixed;
+  top: 30%;
+  left: 75rpx;
+  width: 600rpx;
+  height: 200rpx;
   text-align: center;
   line-height: 200rpx;
   border-radius: 20rpx;
 }
-.prompt text{
+
+.noneprompt-view text {
   font-size: 28rpx;
   letter-spacing: 10rpx;
-  color:white;
+  color: white;
+}
+
+.prompt-scrool {
+  margin-top: 150rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.promptview {
+  margin-top: 50rpx;
+}
+
+.sigle-prompt {
+  margin-bottom: 35rpx;
+  width: 600rpx;
+  margin-left: 65rpx;
 }

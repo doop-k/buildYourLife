@@ -1,0 +1,22 @@
+<template name="sigletuibu">
+  <view class="sigletuibu-view" bindtap='showLongLifeMsg' data-lifeid="{{lifeID}}" data-bid='{{bid}}' >
+    <view class="tuibutop-view">
+
+      <image class="avatarurl"  catchtap='toUserPageTap' data-lifeid="{{lifeID}}" src='{{avatarurl}}'></image>
+      <view class="nick-time">
+        <text class="nickname" catchtap='toUserPageTap' data-lifeid="{{lifeID}}">{{nickname}}</text>
+        <text class="howlong">{{howlong}}</text>
+      </view>
+    </view>
+    <view class="tuibucenter-view">
+      <text class="tuibumsg" selectable>{{tuibumsg}}</text>
+    </view>
+    <view class="tuibubottom-view">
+      <view class="bottom-text-view">
+        <text class="bottomtext">{{tuibulike}} 赞</text>
+        <text class="bottomtext">{{leavemsg}} 评论</text>
+      </view>
+      <image class="likeimg"  data-bid="{{bid}}" catchtap='liketuibuTap'  animation="{{likeanimation}}" src="{{islike?'/images/icon/liked.png':'/images/icon/like.png'}}"></image>
+    </view>
+  </view>
+</template>

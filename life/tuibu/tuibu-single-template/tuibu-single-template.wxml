@@ -1,8 +1,8 @@
 <template name="tuibu">
 <view>
-  <view class="single-tuibu-view" bindtap='tuibuDetail' data-bid="{{bid}}">
+  <view class="single-tuibu-view" style="background:transparent; border: 1rpx solid {{gradientColor}};" bindtap='showLongMsg' data-bid="{{bid}}" data-lifeid="{{lifeID}}" >
 
-    <text class="lifeMsg-text" bindtap='showLongMsg' data-bid="{{bid}}" data-lifeid="{{lifeID}}">{{tuibuMsg}}</text>
+    <text class="lifeMsg-text" >{{tuibuMsg}}</text>
     <!--填充的文字-->
 
     <text class="time-text">{{time}}</text>
@@ -13,17 +13,17 @@
         <text class="dynamic-text">{{age}}</text>
         <text class="default-text">{{agefont}}</text>
       </view>
-
+        <view class="data-view">
+        <!--评论-->
+        <text class="dynamic-text">{{leaveMsg}}</text>
+        <text class="default-text">条评论</text>
+      </view>
       <view class="data-view">
         <!--赞数-->
         <text class="dynamic-text">{{tuibuLike}}</text>
         <text class="default-text">{{likefont}}</text>
       </view>
-      <view class="data-view">
-        <!--赞数-->
-        <text class="dynamic-text">{{leaveMsg}}</text>
-        <text class="default-text">次评论</text>
-      </view>
+      
 
 
     </view>

@@ -66,9 +66,60 @@ function processSigleTuibu(data) {
   console.log('ok')
   return tuibuMsg;
 }
+function gethowlong(firsttime, secondtime) {
+  console.log("执行gethowlong(argv1,argv2)函数");
+  firsttime = firsttime.toString().replace(' ', '/').replace(':', '/').split('/');
+  secondtime = secondtime.toString().replace(' ', '/').replace(':', '/').split('/');
+  var howlong = "";
+  var diff = "";
+
+  if (firsttime[0] != secondtime[0]) {
+    diff = parseInt(firsttime[0]) - parseInt(secondtime[0]);
+    howlong = diff + "年前";
+    return howlong;
+  } else if (firsttime[1] != secondtime[1]) {
+    diff = parseInt(firsttime[1]) - parseInt(secondtime[1]);
+    howlong = diff + "月前";
+    return howlong;
+  } else if (firsttime[2] != secondtime[2]) {
+    diff = parseInt(firsttime[2]) - parseInt(secondtime[2]);
+    howlong = diff + "天前";
+    switch (diff) {
+      case 1: {
+        howlong = '昨天';
+        break;
+      }
+      case 2: {
+        howlong = '前天';
+        break;
+      }
+    }
+    return howlong;
+  } else if (firsttime[3] != secondtime[3]) {
+    diff = parseInt(firsttime[3]) - parseInt(secondtime[3]);
+    howlong = diff + "小时前";
+    return howlong;
+  } else if (firsttime[4] != secondtime[4]) {
+    diff = parseInt(firsttime[4]) - parseInt(secondtime[4]);
+    howlong = diff + "分钟前";
+    if (diff < 3) {
+      howlong = '刚刚'
+    }
+    return howlong;
+  } else {
+    howlong = '刚刚';
+    return howlong;
+  }
+
+
+  console.log(firsttime);
+  console.log(secondtime)
+}
+
 module.exports = {
   formatTime: formatTime,
   splitTime: splitTime,
   processData: processData,
-  processSigleTuibu: processSigleTuibu
+  processSigleTuibu: processSigleTuibu,
+  gethowlong: gethowlong
 }

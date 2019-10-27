@@ -17,6 +17,6 @@ page{
 } 
 page{
     background:white;
-    color:black;
+    color:#333;
 
 }

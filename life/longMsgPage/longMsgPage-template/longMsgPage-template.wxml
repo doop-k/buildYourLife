@@ -7,7 +7,7 @@
     </view>
     <image catchtap='collectedTuibu' src="{{isCollected?'/images/icon/colled.png':'/images/icon/coll.png'}}" class="collected"></image>
     <scroll-view scroll-y  bindscrolltolower="updateLeaveMsg"  style="height:{{scrollHeight}}" class="scroll-view">
-      <text class="userMessage">{{tuibuMsg}}</text>
+      <text class="userMessage" selectable>{{tuibuMsg}}</text>
       <view class="bottomTools">
         <view class="msgLevel">
           <view class="recText">
@@ -16,7 +16,7 @@
             <text class="delTuibu" data-bid="{{bid}}" wx:if="{{isSelf}}" catchtap='delTuibu'>扔掉</text>
           </view>
         </view>
-        <image class="likeImg" catchtap='liketuibuTap' src="{{isLike?'/images/icon/liked.png':'/images/icon/like.png'}}"></image>
+        <image class="likeImg" dis catchtap='liketuibuTap' animation="{{likeanimation}}" src="{{isLike?'/images/icon/liked.png':'/images/icon/like.png'}}"></image>
       </view>
       <view class="leaveMsg">
         <view class="leaveMsg-top">

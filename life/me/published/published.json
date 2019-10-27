@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "写推布"
+  "navigationBarTitleText": "写推布",
+  "navigationStyle": "custom"
 }

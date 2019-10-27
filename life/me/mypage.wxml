@@ -12,18 +12,18 @@
   </view>
 </view>
 
-<view wx:if="{{loginSuccess}}"  class="mypage-view" >
-<image src="/images/icon/mycolled.png" data-lifeid="{{lifeID}}" bindtap='opencolled' class="mycolled"></image>
-  <template is="htuibu" data="{{userImage:avatarUrl,userNickName:nickName,who:'我',lifeID:lifeID,color:color}}" />
+<view wx:if="{{loginSuccess}}"   class="mypage-view" >
+<button class="settingbtn" catchtap='openSetting'>设置</button>
+  <template is="htuibu" data="{{userImage:avatarUrl,userNickName:nickName,who:'我',lifeID:lifeID,color:color,isself:true,tuibuCount:tuibuCount,colledCount:colledCount}}" />
   <view class="btn-view">
- 
-    <button style="color:{{color}};border:1px solid {{color}};"  class="inputText" bindtap='sayMsgTap'> 写一条 推布</button>
-        <button style="color:{{color}};border:1px solid {{color}};" class="inputText" bindtap='saytuiji'> 写一条 推记</button>
+
+    <button   bindtap='sayMsgTap'   > 写 推 布</button>
+        <button    bindtap='saytuiji'  > 写 推 记</button>
          </view>
 </view>
 <view wx:else >
-  <button class="btnLogin" bindgetuserinfo="getUserInfoTap" open-type="getUserInfo" bindtap='loginLife' >
-    登陆
+  <button class="btnLogin" bindgetuserinfo="getUserInfoTap" open-type="getUserInfo"  >
+    登录
   </button>
   <!-- <view class="loginPage">
   <text class="title">一生的建议</text>

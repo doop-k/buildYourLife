@@ -42,7 +42,10 @@ Page({
               who:who,
               nickName:data.nickName,
               avatarUrl:data.avatarUrl,
-              gender: data.gender
+              gender: data.gender,
+              tuibuCount:data.tuibuCount,
+              tuijiCount:data.tuijiCount,
+              colledCount:data.colledCount
             })
             
           }
@@ -66,6 +69,9 @@ Page({
     wx.navigateTo({
       url: '../../htuiji/htuiji?lifeID=' + this.data.lifeID,
     })
+  },
+  backpage:function(event){
+    wx.navigateBack();
   },
 
   /**

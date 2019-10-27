@@ -1,10 +1,13 @@
 <import src="./tuibu-single-template/tuibu-single-template"  />
-
+<import src="../template/back-template/back-template" />
 <view class="tuibu-view">
-<view class="whotuibu-view" bindtap='onwhopageTap'>
+   <view class="nabar" style="background:linear-gradient(to right,#00d9ff,{{color}});">
+      <template is="backbtn" data="{{showback:'true',backtype:'backwhite',text:nickName+' 的推布'}}" />
+    </view>
+<!-- <view class="whotuibu-view" style="background:{{color}}" bindtap='onwhopageTap'>
   <image class="avatar-img" src='{{avatarUrl}}'></image>
   <text class="nickname-text">{{nickName}}  的推布</text>
-</view>
+</view> -->
 
 
 <scroll-view scroll-y bindscrolltolower="updateTuibu" class="tuibu-template-view" style='height:{{scrollHeight}}' wx:if="{{tuibuData[0]}}"  >
@@ -12,7 +15,7 @@
 <block wx:for="{{tuibuData}}" wx:for-item="data">
 
 <view  class="single-tubu">
-<template is='tuibu'  data="{{isSelf:isSelf,tuibuMsg:data.tuibuMsg,age:data.age,agefont:agefont,tuibuLike:data.tuibuLike,likefont:likefont,time:data.time,bid:data.bid,color:color,leaveMsg:data.leaveMsg,lifeID:data.lifeID}}"  />
+<template is='tuibu'  data="{{isSelf:isSelf,tuibuMsg:data.tuibuMsg,age:data.age,agefont:agefont,tuibuLike:data.tuibuLike,likefont:likefont,time:data.time,bid:data.bid,color:color,complementaryColor:complementaryColor,gradientColor:gradientColor,leaveMsg:data.leaveMsg,lifeID:data.lifeID}}"  />
 </view>
 
 </block>

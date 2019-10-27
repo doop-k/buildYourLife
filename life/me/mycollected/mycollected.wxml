@@ -1,7 +1,14 @@
 <import src="../../template/moreLifeMsg-template/single-lifeMsg-template/single-lifeMsg-template" />
 <import src="../../template/search-template/search-template" />
+<import src="../../template/back-template/back-template" />
 <view>
-<template is="search" wx:if="{{tuibuMsg[0]}}"    data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,color:color,placeholder:placeholder,input_type:input_type}}" />
+   <view class="nabar" style="background:linear-gradient(to right,#00d9ff,{{color}});">
+      <template is="backbtn" data="{{showback:'true',backtype:'backwhite',text:'收藏的推布'}}" />
+    </view>
+   <view class="top-tool-view" style="background:linear-gradient(to right,#00d9ff,{{color}});">
+     <template is="search" wx:if="{{tuibuMsg[0]}}"    data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,placeholder:placeholder,iconcolor:'rgb(255,255,255)',placecolor:'rgb(255,255,255)',input_type:input_type}}" />
+    </view>
+
 
 <scroll-view scroll-y wx:if="{{tuibuMsg[0]}}" bindscrolltolower="updateData" class="more-lifeMsg-view" style="height:{{scrollHeight}}">
   <block wx:for="{{tuibuMsg}}" wx:for-item="data">

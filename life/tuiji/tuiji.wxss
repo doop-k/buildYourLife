@@ -1,5 +1,13 @@
 /* life/tuiji/tuiji.wxss */
+@import "../template/back-template/back-template";
+.nabar {
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  height: 150rpx;
+  z-index:99;
 
+}
 page {
   padding: 0rpx;
   margin: 0rpx;
@@ -9,7 +17,7 @@ page {
   width: 100%;
   height:100%;
   position: absolute;
-  top:0rpx;
+  top:100rpx;
   left:0rpx;
 }
 .tuiji-view {
@@ -44,7 +52,7 @@ form {
   line-height: 80rpx;
   font-size: 34rpx;
   letter-spacing: 5rpx;
-
+  margin-bottom: 20rpx;
 
 }
 
@@ -80,18 +88,18 @@ form {
 .tuiji_content {
   width: 90%;
   margin-left:5%;
-  height: 400rpx;
+  height: 300rpx;
   text-align: center;
   vertical-align: center;
   font-size: 30rpx;
-  letter-spacing: 10rpx;
+  letter-spacing: 20rpx;
   padding-left:20rpx;
   padding-right: 20rpx;
+  margin-bottom:100rpx;
+  margin-top:10rpx;
 }
 
-.tuiji_content_place {
-  margin-top: 400rpx;
-}
+
 
 .tuiji_signature {
   width: 90%;

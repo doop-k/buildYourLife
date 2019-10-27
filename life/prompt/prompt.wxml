@@ -1,4 +1,22 @@
 
-<view class="prompt-view" style="background:{{color}}">
+<import src="./prompt-template/prompt-template" />
+<import src="../template/back-template/back-template" />
+<view class="nabar" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
+  <template is="backbtn" data="{{backtype:'backwhite',backgroundstyle:nabarebackgroundstyle,text:'一生:消息'}}" />
+</view>
+<scroll-view wx:if="{{promptData[0]}}" scroll-y  class="prompt-scrool" >
+
+<view class="promptview">
+<block wx:for="{{promptData}}" wx:for-item="data">
+
+<view class="sigle-prompt">
+<template is="prompt" data="{{...data,gradientColor:gradientColor,color:color}}" />
+</view>
+
+</block>
+</view>
+</scroll-view>
+
+<view wx:else style="background:linear-gradient(to right,{{gradientColor}},{{color}});" class="noneprompt-view" >
 <text>暂时没您什么消息···</text>
 </view>

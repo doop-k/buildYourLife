@@ -35,8 +35,12 @@ Page({
     var count=that.data.count;
     var lifeUrl = app.globalData.g_lifeUrl;
     var color=app.globalData.g_item_color;
+    wx.setNavigationBarColor({
+      frontColor: "#ffffff",
+      backgroundColor: color
+    })
     var screenHeight = app.globalData.screenHeight;
-    var scrollHeight = (screenHeight * 2 - 178) + 'rpx'
+    var scrollHeight = (screenHeight * 2 - 210) + 'rpx'
     if (screenHeight >= 800) {
       scrollHeight = (screenHeight * 2 - 278) + 'rpx'
     }
@@ -65,10 +69,13 @@ Page({
   },
   updateData:function(event){
     var that=this;
+    that.setData({
+      updateFlag:true
+    })
     wx.showNavigationBarLoading();
     wx.request({
 
-      url: that.data.lifeUrl+'/getColledTuibu?lifeID=' + lifeID + '&start=' + start + '&count=' + count,
+      url: that.data.lifeUrl+'/getColledTuibu?lifeID=' + that.data.lifeID + '&start=' + that.data.start + '&count=' + that.data.count,
       success(res) {
         wx.hideNavigationBarLoading()
         if (res.data.data != 'none') {
@@ -98,7 +105,10 @@ Page({
       })
     }
       if(that.data.updateFlag){
-        tuibuMsg = that.data.tuibuMsg.concat(tuibuMsg)
+        tuibuMsg = that.data.tuibuMsg.concat(tuibuMsg);
+        that.setData({
+          updateFlag: false
+        })
       }
       that.setData({
         tuibuMsg: tuibuMsg
@@ -178,6 +188,9 @@ Page({
 
 
 
+  },
+  backpage: function () {
+    wx.navigateBack();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,6 +1,12 @@
 <import src="../htuibu-template/htuibu-template"  />
+<import src="../../template/back-template/back-template" />
+<view class="pageindex-view">
 
-<template is="htuibu" data="{{userImage:avatarUrl,userNickName:nickName,who:who,lifeID:lifeID,color:color}}" >
+
+<template is="backbtn" data='{{showback:"true",backtype:"backwhite",text:"个人主页"}}' />
+
+<template is="htuibu" data="{{userImage:avatarUrl,userNickName:nickName,who:who,lifeID:lifeID,color:color,tuibuCount:tuibuCount,tuijiCount:tuijiCount,colledCount:colledCount}}" >
 
 </template>
 
+</view>

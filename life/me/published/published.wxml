@@ -1,3 +1,9 @@
 <import src="../published-template/published-template" />
+<import src="../../template/back-template/back-template" />
+   <view class="nabar" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
+      <template is="backbtn" data="{{showback:'true',backtype:'backwhite',text:'写推布'}}" />
+    </view>
 
-<template is="published-template" data="{{availableAge:availableAge,nickName:nickName,avatarUrl:avatarUrl,value:value,selected:selected,color:color,isCanwrite:isCanwrite}}"   />
+
+<template is="published-template" data="{{availableAge:availableAge,nickName:nickName,avatarUrl:avatarUrl,value:value,selected:selected,color:color,isCanwrite:isCanwrite,gradientColor:gradientColor}}"   />
+

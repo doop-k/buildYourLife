@@ -2,11 +2,13 @@
 @import "../ageMessageBox-template/ageMessageBox-template";
 
 .age_box-view {
-  width: 100%;
+  width: 650rpx;
   height: auto;
   position: relative;
   margin-bottom: 100rpx;
-  transition: 1s;
+  box-shadow: 5px 5px 20px 5px #aaa;
+  left: 50rpx;
+  border-radius: 10rpx;
 }
 
 .age_box {
@@ -14,22 +16,25 @@
 }
 
 .headView {
-  width: 700rpx;
-  margin-left:25rpx;
+  width: 650rpx;
   display: flex;
   flex-direction: raw;
-  height:80rpx;
+  height: 80rpx;
   line-height: 80rpx;
-  border-radius: 10rpx;
+  border-radius: 5px 5px 0.5px 0.5px;
+  color: white;
+  margin-bottom: 1rpx;
 }
-
 .bodyView {
-  margin-left: 50rpx;
-  text-align: center;
-  line-height: 100rpx;
-  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* text-align: center;
+  line-height: 100rpx; */
+  transition: 0.5s;
   overflow: hidden;
-  width:650rpx;
+  width: 650rpx;
+  height: 310rpx;
 }
 
 .age_number {
@@ -48,20 +53,34 @@
   width: 100%;
   position: relative;
   bottom: 23rpx;
-  font-size: 30rpx;
+  /* font-size: 30rpx; */
+  font-size: 0rpx;
   letter-spacing: 10rpx;
+  color: white;
 }
 
-.msgitembox {
+/* .msgitembox {
   margin-bottom: 30rpx;
-}
+} */
 
 .age_box_bottom {
-  position: relative;
+  /* position: relative;
   width: 700rpx;
   margin-left:25rpx;
   border-top:1rpx solid white;
   height: 40rpx;
-  border-radius: 10rpx;
-
+  border-radius: 10rpx; */
+}
+.moreimgView{
+  margin-left: 262rpx;
+  height:100%;
+  width:100rpx;
+}
+.moreimg {
+  width: 50rpx;
+  height: 15rpx;
+  margin-top: 37rpx;
+}
+.moreimgView:active{
+  background:rgba(0,0,0,0.3);
 }

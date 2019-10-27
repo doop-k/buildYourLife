@@ -1,0 +1,14 @@
+<view class="advices-view" style='background:linear-gradient({{color}},white);'>
+
+
+<view class="form-view">
+
+
+<form bindsubmit='submitAdvices' >
+<textarea name="advices"  class="advices" placeholder='写下你对小程序的建议' placeholder-style='color:white' value="{{advices}}"></textarea>
+
+<button  class="submit" form-type='submit'>留 言</button>
+</form>
+</view>
+
+</view>

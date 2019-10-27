@@ -1,0 +1,21 @@
+<template name="wp-single">
+
+  <view class="tuibuMsg-box">
+
+    <view class="headView" style="background:{{complementaryColor}}">
+      <text class="age_number">{{age}}</text>
+      <text class="age_text">岁</text>
+      <view class="moreimgView" data-age="{{age}}" catchtap='showMoreMsg'>
+        <image src="/images/icon/more.png" class="moreimg"></image>
+      </view>
+    </view>
+    <view class="bodyView" catchtap='showLongMsg' data-bid="{{bid}}" data-lifeid="{{lifeID}}" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
+      <text class="howlong">{{howlong}}</text>
+      <view class="userinfo-view">
+        <image class="userimg" src="{{avatarurl}}" catchtap='showUserPage' data-lifeid="{{lifeID}}"></image>
+        <text class="username" 	>{{nickname}}</text>
+      </view>
+      <text class="tuibumsg" selectable >{{tuibumsg}}</text>
+    </view>
+    </view>
+</template>

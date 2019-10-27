@@ -1,12 +1,21 @@
 <import src="../agebox-template/agebox-template" />
 <import src="../template/search-template/search-template" />
+<import src="../template/back-template/back-template" />
+<import src="../template/worldpage-template/wp-template" />
+<view class="nabar" style="background:linear-gradient(to right,{{gradientColor}},{{color}});"  >
+<template is="backbtn" data="{{backgroundstyle:nabarebackgroundstyle,text:'一生：推布圈'}}" />
 <view class="contains">
-<text class="title" style="background:{{color}};">推布圈</text>
-<template is="search"   data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,color:color,placeholder:placeholder,input_type:input_type}}" />
 
-<scroll-view scroll-y bindscrolltolower="updateTabdata"  class="age_contains" style="height:{{scrollHeight}}">
+</view>
+<!-- <text ">推布圈</text> -->
+<view class="title" style="background:linear-gradient(to right,{{gradientColor}},{{color}});">
+<template is="search"   data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,color:'white',placeholder:placeholder,input_type:input_type}}" />
+</view>
+
+
+<scroll-view scroll-y bindscrolltolower="updateTuibu"  class="age_contains" style="height:{{scrollHeight}}">
 <block wx:for="{{tuibuData}}" wx:for-item="data" >
-<template is="age_box_template"  data="{{age:data.age,tuibuMsg:data.tuibuMsg,boxHeight:data.boxHeight,color:color}}"/>
+<template is="wp-single" data="{{...data,gradientColor:gradientColor,color:color,complementaryColor:complementaryColor}}" />
 </block>
 
 </scroll-view> 

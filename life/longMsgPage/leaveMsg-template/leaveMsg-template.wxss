@@ -1,79 +1,79 @@
-.del-view-father{
+.del-view-father {
   width: 650rpx;
   height: auto;
   overflow: hidden;
-    display: flex;
+  display: flex;
   flex-direction: row;
   border-radius: 26rpx;
-
 }
+
 .t-leaveMsg {
-  width:650rpx;
+  width: 650rpx;
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
-  padding-top: 20rpx;
-  border-radius: 26rpx;
-
+  justify-content: space-around;
+  padding-top: 10rpx;
+  border-bottom: 1rpx solid #bbb;
 }
 
 .t-avatarimg {
-  width: 70rpx;
-  height: 70rpx;
-  border-radius: 70rpx;
-  margin-left: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  margin-left: 20rpx;
 }
 
 .t-msgtime {
   width: 541rpx;
   display: flex;
   flex-direction: column;
-  margin-left:30rpx;
-
+  margin-left: 30rpx;
+  margin-top:15rpx;
 }
 
 .t-text {
   width: 500rpx;
   height: auto;
-  color:white;
+  color: #333;
 }
 
 .t-time {
   font-size: 26rpx;
   width: 300rpx;
-    color:white;
+   color: #bbb;
 }
 
-.btndellea{
-  color:rgb(255, 36, 36);
-  background: white;
-  width:200rpx;
-  height:auto;
-  margin-top:-19rpx;
+.btndellea {
+  color: rgb(255, 36, 36);
+  background: red;
+  width: 200rpx;
+  height: auto;
+  margin-top: -19rpx;
 }
-button::after{
-  border:none;
+
+button::after {
+  border: none;
   border-radius: 0rpx;
 }
-.delbtn-view{
-  width:200rpx;
-  height:auto;
 
+.delbtn-view {
+  width: 200rpx;
+  height: auto;
 }
 
-.t-del{
+.t-del {
   display: flex;
   flex-direction: row;
-margin-left: 135rpx;
+  margin-left: 135rpx;
   height: 80rpx;
   line-height: 80rpx;
   text-align: right;
   width: 100%;
-
 }
-.del-text{
+
+.del-text {
   font-size: 20rpx;
-  color:rgb(0, 0, 0);
-  margin-left:20rpx;
+  color: red;
+  margin-left: 20rpx;
 }

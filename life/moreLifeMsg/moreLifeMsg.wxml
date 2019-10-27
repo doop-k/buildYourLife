@@ -1,16 +1,22 @@
 <import src="../template/moreLifeMsg-template/single-lifeMsg-template/single-lifeMsg-template" />
+<import src="../template/moretuibu-sigle-template/sigle-template" />
 <import src="../template/search-template/search-template" />
-
-<view>
-<template is="search"   data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,color:color,placeholder:placeholder,input_type:input_type}}" />
+<import src="../template/back-template/back-template" />
+<view class="nabar" style="background:linear-gradient(to right,#00d9ff,{{color}});">
+  <template is="backbtn" data="{{showback:'true',backtype:'backwhite',backgroundstyle:nabarebackgroundstyle,text:age+'岁的推布圈'}}" />
+</view>
+<view class="top-tool-view" style="background:linear-gradient(to right,#00d9ff,{{color}});">
+  <template is="search" data="{{topright_flag:true,input_text:input_text,xxflag:xxflag,color:'transparent',placeholder:placeholder,input_type:input_type,iconcolor:'rgb(255,255,255)',placecolor:'rgb(255,255,255)'}}" />
+  <button class="changModebtn" catchtap='changModetap' wx:if="{{!xxflag}}">{{btntext}}</button>
 </view>
 <scroll-view scroll-y bindscrolltolower="updateData" class="more-lifeMsg-view" style="height:{{scrollHeight}}">
   <block wx:for="{{tuibuMsg}}" wx:for-item="data">
-    <view class="single-lifeMsg-view"  >
+    <!-- <view class="single-lifeMsg-view">
       <template is="single-lifeMsg-template" data="{{avatarUrl:data.avatarUrl,tuibuMsg:data.tuibuMsg,lifeID:data.lifeID,bid:data.bid,color:color}}" />
 
+    </view> -->
+    <view class="children-view">
+      <template is="sigletuibu" data="{{avatarurl:data.avatarurl,nickname:data.nickname,tuibumsg:data.tuibumsg,lifeID:data.lifeID,bid:data.bid,color:color,howlong:data.howlong,tuibulike:data.tuibulike,leavemsg:data.leavemsg,islike:data.islike,likeanimation:data.likeanimation}}" />
     </view>
   </block>
-
 </scroll-view>
-

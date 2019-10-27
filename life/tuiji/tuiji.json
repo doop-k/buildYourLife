@@ -1,7 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "推记   记下浪漫文字"
-
-
-
+  "navigationBarTitleText": "推记   记下浪漫文字",
+  "navigationStyle": "custom"
 }
